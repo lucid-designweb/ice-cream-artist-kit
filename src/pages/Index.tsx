@@ -11,22 +11,28 @@ import dessertSundae from "@/assets/dessert-sundae.jpg";
 import shopInterior from "@/assets/shop-interior.jpg";
 
 const flavors = [
-  { name: "Pistacchio", note: "Bronte • crushed nuts", color: "bg-pistachio", img: flavorPistachio },
-  { name: "Lampone", note: "raspberry sorbet", color: "bg-raspberry", img: flavorRaspberry },
-  { name: "Cioccolato", note: "70% dark", color: "bg-cocoa", img: flavorChocolate },
-  { name: "Limone", note: "Sicilian lemon", color: "bg-mango", img: flavorLemon },
+  { name: "Fistic", note: "Bronte • bucățele de nuci", color: "bg-pistachio", img: flavorPistachio },
+  { name: "Zmeură", note: "sorbet natural", color: "bg-raspberry", img: flavorRaspberry },
+  { name: "Ciocolată", note: "neagră 70%", color: "bg-cocoa", img: flavorChocolate },
+  { name: "Lămâie", note: "din Sicilia", color: "bg-mango", img: flavorLemon },
 ];
 
-const desserts = [
-  { name: "Coppa Aniela", price: "28 lei", img: dessertSundae, desc: "Five scoops, fresh berries, Chantilly, sparkler." },
-  { name: "Waffle Classico", price: "24 lei", img: dessertWaffle, desc: "Belgian waffle, vanilla gelato, strawberries, dark chocolate." },
-  { name: "Limonata della Casa", price: "18 lei", img: dessertLemonade, desc: "Hand-pressed lemon, raspberry, garden mint, ice." },
+const coppe = [
+  { name: "Grandissimo", grams: "350 g", price: "23 lei", img: dessertSundae,
+    desc: "Înghețată de vanilie, ciocolată și fistic, frișcă, sirop Nutella, sos de căpșuni cu un strop de granola și napolitană învelită în ciocolată." },
+  { name: "Hot Berry Gelato", grams: "230 g", price: "15,5 lei", img: dessertWaffle,
+    desc: "Un glazur de zmeură, căpșuni și mure cald, peste înghețata de vanilie." },
+  { name: "Limonată de casă", grams: "500 ml", price: "18 lei", img: dessertLemonade,
+    desc: "Lămâie stoarsă manual, zmeură proaspătă, mentă din grădină și gheață." },
 ];
 
 const reviews = [
-  { name: "Borsi István", time: "egy éve", text: "Dekoratív és finom fagyikelyhek. Szolgálnak még kávéval, gofrival és limonádékkal.", rating: 5 },
-  { name: "Emma Rigo", time: "egy hónapja", text: "Înghețata aici este foarte bună. Și au grijă de animalele tale (ex. îi dau apă).", rating: 5 },
-  { name: "Marian Pijen", time: "4 éve", text: "Finom a fagylalt 👌", rating: 5 },
+  { name: "Borsi István", time: "acum un an",
+    text: "Cupe de înghețată decorative și foarte gustoase. Servesc și cafea, gofre și limonade.", rating: 5 },
+  { name: "Emma Rigo", time: "acum o lună",
+    text: "Înghețata aici este foarte bună. Și au grijă de animalele tale (ex. îi dau apă).", rating: 5 },
+  { name: "Marian Pijen", time: "acum 4 ani",
+    text: "Foarte bună înghețata 👌", rating: 5 },
 ];
 
 const Index = () => {
@@ -42,10 +48,10 @@ const Index = () => {
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#menu" className="hover:text-raspberry transition-colors">Menu</a>
-            <a href="#gallery" className="hover:text-raspberry transition-colors">Gallery</a>
-            <a href="#reviews" className="hover:text-raspberry transition-colors">Reviews</a>
-            <a href="#visit" className="hover:text-raspberry transition-colors">Visit</a>
+            <a href="#meniu" className="hover:text-raspberry transition-colors">Meniu</a>
+            <a href="#cupe" className="hover:text-raspberry transition-colors">Cupe</a>
+            <a href="#recenzii" className="hover:text-raspberry transition-colors">Recenzii</a>
+            <a href="#vizita" className="hover:text-raspberry transition-colors">Vizită</a>
           </nav>
           <a href="tel:+40744601167" className="hidden md:inline-flex">
             <Button variant="default" className="rounded-full bg-cocoa hover:bg-cocoa/90 text-cream gap-2">
@@ -58,7 +64,6 @@ const Index = () => {
       {/* HERO */}
       <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-32 grain">
         <div className="absolute inset-0 -z-10 bg-gradient-scoop" />
-        {/* Floating blobs */}
         <div className="pointer-events-none absolute -top-10 -left-20 h-72 w-72 bg-mango/40 blob animate-float-slow" />
         <div className="pointer-events-none absolute top-40 -right-16 h-80 w-80 bg-pistachio/40 blob-2 animate-float-slower" />
         <div className="pointer-events-none absolute bottom-10 left-1/3 h-56 w-56 bg-raspberry/20 blob animate-float-slow" />
@@ -71,31 +76,31 @@ const Index = () => {
             </div>
 
             <h1 className="mt-6 font-display font-medium text-[clamp(3rem,9vw,8.5rem)] leading-[0.88] tracking-tight text-balance">
-              Scoops <em className="italic text-raspberry">that</em>
+              Cupe <em className="italic text-raspberry">cu</em>
               <br />
-              taste like
+              gust de
               <br />
               <span className="relative inline-block">
-                <span className="relative z-10">summer.</span>
+                <span className="relative z-10">vară.</span>
                 <span className="absolute -bottom-2 left-0 right-0 h-3 bg-mango/70 -z-0 rounded-full" />
               </span>
             </h1>
 
             <p className="mt-8 max-w-lg text-lg text-cocoa/75 leading-relaxed">
-              Hand-churned gelato, sorbets &amp; desserts in the heart of Bistrița since forever.
-              Made slow, served fast — and always with a wagging-tail welcome.
+              Înghețată artizanală, sorbeturi și deserturi în inima Bistriței. Făcute pe îndelete,
+              servite repede — și mereu cu o întâmpinare prietenoasă, inclusiv pentru prietenii cu blană.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a href="#menu">
+              <a href="#meniu">
                 <Button size="lg" className="rounded-full bg-raspberry hover:bg-raspberry-deep text-cream shadow-pop h-14 px-8 text-base gap-2 group">
-                  Taste the menu
+                  Vezi meniul
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
-              <a href="#visit">
+              <a href="#vizita">
                 <Button size="lg" variant="outline" className="rounded-full border-cocoa text-cocoa hover:bg-cocoa hover:text-cream h-14 px-8 text-base">
-                  Find the shop
+                  Găsește gelateria
                 </Button>
               </a>
             </div>
@@ -107,8 +112,8 @@ const Index = () => {
                 ))}
               </div>
               <div className="text-sm">
-                <span className="font-display text-xl font-semibold">4.8</span>
-                <span className="text-cocoa/60"> · 634 Google reviews</span>
+                <span className="font-display text-xl font-semibold">4,8</span>
+                <span className="text-cocoa/60"> · 634 recenzii Google</span>
               </div>
             </div>
           </div>
@@ -119,20 +124,19 @@ const Index = () => {
             <div className="relative aspect-[3/4] overflow-hidden rounded-[2.5rem] shadow-pop">
               <img
                 src={heroGelato}
-                alt="Three colorful scoops of gelato — pistachio, raspberry and mango — in a waffle cone"
+                alt="Trei cupe colorate de înghețată — fistic, zmeură și mango — într-o napolitană"
                 width={1536}
                 height={1536}
                 className="h-full w-full object-cover"
               />
             </div>
-            {/* Sticker */}
             <div className="absolute -bottom-6 -left-6 h-28 w-28 rounded-full bg-cocoa text-cream flex items-center justify-center shadow-cream animate-spin-slow">
               <svg viewBox="0 0 100 100" className="h-full w-full">
                 <defs>
                   <path id="circ" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" />
                 </defs>
                 <text className="font-display fill-cream" fontSize="11" letterSpacing="2">
-                  <textPath href="#circ">FRESH · DAILY · SINCE 2014 · MADE WITH LOVE · </textPath>
+                  <textPath href="#circ">PROASPĂTĂ · ZILNIC · CU DRAG · DIN 2014 · </textPath>
                 </text>
               </svg>
             </div>
@@ -148,7 +152,7 @@ const Index = () => {
         <div className="flex marquee whitespace-nowrap">
           {[...Array(2)].map((_, k) => (
             <div key={k} className="flex items-center gap-12 px-6 font-display italic text-3xl md:text-4xl">
-              {["Gelato artigianale", "Sorbetti", "Waffle", "Limonate", "Caffè", "Coppe"].map((w, i) => (
+              {["Înghețată artizanală", "Sorbeturi", "Gofre", "Limonate", "Cafea", "Cupe speciale"].map((w, i) => (
                 <span key={i} className="flex items-center gap-12">
                   {w}
                   <span className="h-3 w-3 rounded-full bg-mango" />
@@ -159,21 +163,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FLAVORS / MENU */}
-      <section id="menu" className="py-24 md:py-36 relative">
+      {/* MENIU — paper-menu reference */}
+      <section id="meniu" className="py-24 md:py-36 relative bg-blush/40 grain overflow-hidden">
+        {/* Vertical hand-drawn label like the menu */}
+        <div className="hidden lg:block absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
+          <span className="font-display italic text-cocoa/30 text-7xl tracking-[0.3em]">ÎNGHEȚATĂ</span>
+        </div>
+
         <div className="container">
           <div className="grid md:grid-cols-12 gap-8 mb-16">
             <div className="md:col-span-5">
-              <p className="text-xs font-medium tracking-widest uppercase text-raspberry">01 — The flavors</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-raspberry">01 — Sortimente</p>
               <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.9] tracking-tight">
-                Twenty-four <em className="italic">scoops</em>, zero compromises.
+                Peste douăzeci de <em className="italic">cupe</em>, niciun compromis.
               </h2>
             </div>
             <div className="md:col-span-6 md:col-start-7 self-end">
               <p className="text-lg text-cocoa/75 leading-relaxed">
-                Our gelato is churned every morning with milk from local farms, real Sicilian fruit
-                and the kind of patience grandmothers approve of. Sorbets are dairy-free, naturally vivid
-                and absurdly refreshing.
+                Înghețata noastră este preparată în fiecare dimineață cu lapte din ferme locale,
+                fructe adevărate și răbdare ca la bunica. Sorbeturile sunt fără lactate, vibrant colorate
+                și incredibil de răcoritoare.
               </p>
             </div>
           </div>
@@ -188,7 +197,7 @@ const Index = () => {
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={f.img}
-                    alt={`${f.name} gelato scoop`}
+                    alt={`Înghețată de ${f.name}`}
                     width={1024}
                     height={1024}
                     loading="lazy"
@@ -209,10 +218,10 @@ const Index = () => {
           {/* Price strip */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { qty: "1 scoop", price: "8 lei" },
-              { qty: "2 scoops", price: "14 lei" },
-              { qty: "3 scoops", price: "20 lei" },
-              { qty: "Coppa speciale", price: "28 lei" },
+              { qty: "1 cupă", price: "8 lei" },
+              { qty: "2 cupe", price: "14 lei" },
+              { qty: "3 cupe", price: "20 lei" },
+              { qty: "Cupă specială", price: "28 lei" },
             ].map((p) => (
               <div key={p.qty} className="rounded-2xl border border-cocoa/15 bg-cream px-5 py-4 flex items-baseline justify-between">
                 <span className="text-sm text-cocoa/70">{p.qty}</span>
@@ -223,23 +232,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* DESSERTS / GALLERY */}
-      <section id="gallery" className="py-24 md:py-36 bg-cocoa text-cream relative grain overflow-hidden">
+      {/* CUPE — house specialties styled after the paper menu */}
+      <section id="cupe" className="py-24 md:py-36 bg-cocoa text-cream relative grain overflow-hidden">
         <div className="absolute -top-32 -right-32 h-96 w-96 bg-raspberry/30 blob animate-float-slow" />
         <div className="absolute -bottom-32 -left-32 h-96 w-96 bg-pistachio/20 blob-2 animate-float-slower" />
 
         <div className="container relative">
           <div className="flex items-end justify-between flex-wrap gap-6 mb-16">
             <div>
-              <p className="text-xs font-medium tracking-widest uppercase text-mango">02 — More than gelato</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-mango">02 — Cupele casei</p>
               <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.9] tracking-tight max-w-3xl">
-                Waffles, coppe &amp; <em className="italic text-mango">limonate</em> that make the table cheer.
+                Gofre, coppe și <em className="italic text-mango">limonate</em> care fac masa să aplaude.
               </h2>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {desserts.map((d, i) => (
+            {coppe.map((d, i) => (
               <article
                 key={d.name}
                 className={`group relative overflow-hidden rounded-[2rem] bg-cream text-cocoa shadow-soft hover:shadow-pop transition-all duration-500 hover:-translate-y-2 ${
@@ -258,18 +267,40 @@ const Index = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-display text-3xl">{d.name}</h3>
+                    <div>
+                      <h3 className="font-display text-3xl">{d.name}</h3>
+                      <span className="text-xs uppercase tracking-widest text-cocoa/50">{d.grams}</span>
+                    </div>
                     <span className="font-display text-xl text-raspberry">{d.price}</span>
                   </div>
-                  <p className="mt-2 text-sm text-cocoa/70">{d.desc}</p>
+                  <p className="mt-3 text-sm text-cocoa/70 leading-relaxed">{d.desc}</p>
                 </div>
               </article>
+            ))}
+          </div>
+
+          {/* Tiny menu list — echo of paper menu names */}
+          <div className="mt-16 grid sm:grid-cols-2 gap-x-12 gap-y-4 max-w-3xl text-cream/90">
+            {[
+              ["Banana Split", "400 g", "19 lei"],
+              ["Fruttissima", "280 g", "19 lei"],
+              ["Pinocchio", "130 g", "13 lei"],
+              ["Yogo Macaroons Gelato", "160 g", "17 lei"],
+              ["Choco Goodness", "235 g", "15 lei"],
+              ["Hot Berry Gelato", "230 g", "15,5 lei"],
+            ].map(([n, g, p]) => (
+              <div key={n} className="flex items-baseline gap-3 border-b border-cream/15 py-3">
+                <span className="font-display italic text-lg">{n}</span>
+                <span className="text-xs text-cream/50">{g}</span>
+                <span className="flex-1 border-b border-dotted border-cream/20 translate-y-[-4px]" />
+                <span className="font-display">{p}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* DESPRE */}
       <section className="py-24 md:py-36 relative">
         <div className="container grid md:grid-cols-12 gap-10 items-center">
           <div className="md:col-span-6 relative">
@@ -277,7 +308,7 @@ const Index = () => {
             <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/3] shadow-cream">
               <img
                 src={shopInterior}
-                alt="Inside Gelateria Aniela in Bistrița"
+                alt="În interiorul Gelateriei Aniela din Bistrița"
                 width={1536}
                 height={1024}
                 loading="lazy"
@@ -286,20 +317,20 @@ const Index = () => {
             </div>
           </div>
           <div className="md:col-span-6 md:pl-8">
-            <p className="text-xs font-medium tracking-widest uppercase text-raspberry">03 — The shop</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-raspberry">03 — Despre noi</p>
             <h2 className="mt-4 font-display text-5xl md:text-6xl leading-[0.95] tracking-tight">
-              A small corner of <em className="italic">Italy</em> on Piața Unirii.
+              Un colțișor de <em className="italic">Italie</em> în Piața Unirii.
             </h2>
             <p className="mt-6 text-lg text-cocoa/75 leading-relaxed">
-              Aniela opened her door with one rule: nothing leaves the counter unless she'd serve it
-              to her own family. That means real ingredients, no shortcuts, and a friendly bowl of
-              water for every four-legged guest at the door.
+              Aniela a deschis ușa cu o singură regulă: nimic nu pleacă de la tejghea dacă nu ar servi-o
+              propriei familii. Adică ingrediente reale, fără scurtături — și un bol cu apă pentru
+              fiecare oaspete cu patru lăbuțe.
             </p>
             <div className="mt-10 grid grid-cols-3 gap-6">
               {[
-                { k: "4.8★", v: "634 reviews" },
-                { k: "10–60", v: "min average stay" },
-                { k: "24+", v: "rotating flavors" },
+                { k: "4,8★", v: "634 recenzii" },
+                { k: "10–60", v: "min petrecute aici" },
+                { k: "24+", v: "sortimente rotative" },
               ].map((s) => (
                 <div key={s.k} className="border-l-2 border-raspberry pl-4">
                   <div className="font-display text-3xl">{s.k}</div>
@@ -311,13 +342,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section id="reviews" className="py-24 md:py-36 bg-blush/40 relative grain">
+      {/* RECENZII */}
+      <section id="recenzii" className="py-24 md:py-36 bg-blush/40 relative grain">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-raspberry">04 — Word on the street</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-raspberry">04 — Ce spun clienții</p>
             <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.9] tracking-tight">
-              <em className="italic">Five-star</em> sweetness.
+              Dulceață <em className="italic">de cinci stele</em>.
             </h2>
           </div>
 
@@ -334,13 +365,13 @@ const Index = () => {
                     <Star key={idx} className="h-4 w-4 fill-mango text-mango" />
                   ))}
                 </div>
-                <blockquote className="font-display text-xl leading-snug">"{r.text}"</blockquote>
+                <blockquote className="font-display text-xl leading-snug">„{r.text}”</blockquote>
                 <figcaption className="mt-6 flex items-center justify-between text-sm">
                   <span className="font-medium">{r.name}</span>
                   <span className="text-cocoa/50">{r.time}</span>
                 </figcaption>
                 <div className="absolute -top-4 -right-4 h-10 w-10 rounded-full bg-raspberry text-cream flex items-center justify-center font-display italic text-lg shadow-pop">
-                  "
+                  „
                 </div>
               </figure>
             ))}
@@ -348,19 +379,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* VISIT */}
-      <section id="visit" className="py-24 md:py-36 bg-cocoa text-cream relative overflow-hidden">
+      {/* VIZITĂ */}
+      <section id="vizita" className="py-24 md:py-36 bg-cocoa text-cream relative overflow-hidden">
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-[40rem] w-[40rem] bg-raspberry/15 blob animate-float-slower" />
         <div className="container relative">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="text-xs font-medium tracking-widest uppercase text-mango">05 — Come say ciao</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-mango">05 — Treci pe la noi</p>
               <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.9] tracking-tight">
-                See you at the <em className="italic text-mango">counter</em>.
+                Ne vedem la <em className="italic text-mango">tejghea</em>.
               </h2>
               <p className="mt-6 text-lg text-cream/75 max-w-md">
-                Open daily from 11:00. Walk in, order takeaway or sit at one of our little tables
-                and watch the square go by.
+                Deschis zilnic de la 11:00. Intră, comandă la pachet sau așază-te la una dintre
+                măsuțele noastre și privește piața.
               </p>
 
               <div className="mt-10 space-y-5">
@@ -374,15 +405,15 @@ const Index = () => {
                 <div className="flex gap-4">
                   <Clock className="h-6 w-6 text-mango shrink-0 mt-1" />
                   <div>
-                    <div className="font-medium text-lg">Hours</div>
-                    <div className="text-cream/60">Daily · 11:00 — 22:00</div>
+                    <div className="font-medium text-lg">Program</div>
+                    <div className="text-cream/60">Zilnic · 11:00 — 22:00</div>
                   </div>
                 </div>
                 <a href="tel:+40744601167" className="flex gap-4 group">
                   <Phone className="h-6 w-6 text-mango shrink-0 mt-1" />
                   <div>
                     <div className="font-medium text-lg group-hover:text-mango transition-colors">0744 601 167</div>
-                    <div className="text-cream/60">Call us for special orders</div>
+                    <div className="text-cream/60">Sună-ne pentru comenzi speciale</div>
                   </div>
                 </a>
               </div>
@@ -390,7 +421,7 @@ const Index = () => {
               <div className="mt-10 flex gap-4">
                 <a href="https://www.google.com/maps?q=Gelateria+Aniela+Bistrita" target="_blank" rel="noreferrer">
                   <Button size="lg" className="rounded-full bg-mango hover:bg-mango/90 text-cocoa h-14 px-8">
-                    Get directions
+                    Vezi pe hartă
                   </Button>
                 </a>
                 <a href="#" aria-label="Instagram" className="h-14 w-14 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
@@ -402,14 +433,13 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Map embed */}
             <div className="relative">
               <div className="absolute -inset-4 bg-pistachio/30 blob animate-float-slow" />
               <div className="relative overflow-hidden rounded-[2.5rem] aspect-square shadow-pop border-4 border-cream/10">
                 <iframe
-                  title="Gelateria Aniela location"
+                  title="Locația Gelateriei Aniela"
                   src="https://www.google.com/maps?q=Piata+Unirii+3,+Bistrita&output=embed"
-                  className="h-full w-full grayscale-0"
+                  className="h-full w-full"
                   loading="lazy"
                 />
               </div>
@@ -426,9 +456,9 @@ const Index = () => {
             <span className="font-display text-lg">Gelateria Aniela</span>
           </div>
           <p className="text-sm text-cocoa/60 flex items-center gap-2">
-            <Cookie className="h-4 w-4" /> Made with milk, fruit &amp; love in Bistrița.
+            <Cookie className="h-4 w-4" /> Făcută cu lapte, fructe și drag, în Bistrița.
           </p>
-          <p className="text-xs text-cocoa/50">© {new Date().getFullYear()} · All rights reserved</p>
+          <p className="text-xs text-cocoa/50">© {new Date().getFullYear()} · Toate drepturile rezervate</p>
         </div>
       </footer>
     </div>
