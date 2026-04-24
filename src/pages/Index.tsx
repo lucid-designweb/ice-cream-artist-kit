@@ -144,7 +144,7 @@ const Index = () => {
       {/* ───── HERO — giant cone fading upward ───── */}
       <section
         id="top"
-        className="relative min-h-screen flex flex-col items-center justify-end pb-12 grain overflow-hidden bg-gradient-paper"
+        className="relative min-h-screen flex flex-col items-center justify-end pb-10 grain overflow-hidden bg-gradient-paper"
       >
         {/* soft color blocks like the menu spreads */}
         <div className="pointer-events-none absolute -top-20 -left-24 h-80 w-80 bg-coral/30 blob animate-float-slow" />
@@ -153,54 +153,66 @@ const Index = () => {
 
         {/* small location chip — top */}
         <div
-          className="absolute top-28 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-2 rounded-full border border-cocoa/15 bg-cream/80 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em]"
+          className="absolute top-24 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-2 rounded-full border border-cocoa/15 bg-cream/85 px-4 py-1.5 text-[11px] uppercase tracking-[0.25em]"
           style={{ opacity: 1 - p * 1.2 }}
         >
           <span className="h-1.5 w-1.5 rounded-full bg-rose animate-pulse" />
           Bistrița · Piața Unirii 3 · din 2014
         </div>
 
-        {/* THE GIANT CONE */}
+        {/* GELATERIA — huge, top */}
+        <div
+          className="absolute inset-x-0 top-[14vh] z-20 text-center pointer-events-none px-2"
+          style={{ opacity: 1 - p * 0.5 }}
+        >
+          <div
+            className="font-display text-cocoa leading-[0.85] tracking-[0.04em] whitespace-nowrap"
+            style={{ fontSize: "clamp(3.8rem, 16vw, 16rem)" }}
+          >
+            GELATERIA
+          </div>
+        </div>
+
+        {/* THE CONE — centered, scoops dominate, only tip of cone shows */}
         <img
           src={heroCone}
-          alt="Cupă de înghețată artizanală — fistic, zmeură și piersică"
+          alt="Cupă de înghețată artizanală — zmeură, fistic și piersică"
           width={1024}
           height={1536}
-          className="absolute left-1/2 -translate-x-1/2 z-10 will-change-transform"
+          className="absolute left-1/2 -translate-x-1/2 z-10 will-change-transform pointer-events-none"
           style={{
-            top: "8vh",
-            height: "min(92vh, 900px)",
+            top: "20vh",
+            height: "min(78vh, 820px)",
             width: "auto",
             transform: `translate(-50%, ${coneY}px) scale(${coneScale}) rotate(${coneRot}deg)`,
             opacity: coneOpacity,
             transition: "transform 80ms linear, opacity 80ms linear",
-            filter: "drop-shadow(0 40px 60px hsl(350 70% 40% / 0.25))",
+            filter: "drop-shadow(0 40px 60px hsl(350 70% 40% / 0.28))",
           }}
         />
 
-        {/* "GELATERIA / ANIELA" wrapping the cone */}
-        <div className="absolute inset-x-0 top-[18vh] z-0 text-center pointer-events-none"
-             style={{ opacity: 1 - p * 0.6 }}>
-          <div className="font-display text-cocoa/85 leading-none tracking-[0.06em]"
-               style={{ fontSize: "clamp(3rem, 11vw, 11rem)" }}>
-            GELATERIA
-          </div>
-        </div>
-        <div className="absolute inset-x-0 bottom-[24vh] z-20 text-center pointer-events-none"
-             style={{ opacity: 1 - p * 0.6 }}>
-          <div className="font-display text-rose leading-none tracking-[0.06em]"
-               style={{ fontSize: "clamp(3.5rem, 13vw, 13rem)" }}>
+        {/* ANIELA — huge, bottom, in front */}
+        <div
+          className="absolute inset-x-0 bottom-[22vh] z-20 text-center pointer-events-none px-2"
+          style={{ opacity: 1 - p * 0.5 }}
+        >
+          <div
+            className="font-display text-rose leading-[0.85] tracking-[0.04em] whitespace-nowrap"
+            style={{ fontSize: "clamp(4.5rem, 19vw, 19rem)" }}
+          >
             ANIELA
           </div>
-          <div className="font-script text-cocoa/70 -mt-2 md:-mt-4"
-               style={{ fontSize: "clamp(1.25rem, 3vw, 2.25rem)" }}>
-            cafenea, patiserie &amp; gelato bar
+          <div
+            className="font-script text-cocoa/75 mt-1 md:mt-2"
+            style={{ fontSize: "clamp(1.1rem, 2.6vw, 2rem)" }}
+          >
+            cafenea · patiserie · gelato bar
           </div>
         </div>
 
         {/* CTA strip — bottom */}
         <div
-          className="relative z-20 mt-auto flex flex-wrap items-center justify-center gap-4 px-6"
+          className="relative z-30 mt-auto flex flex-wrap items-center justify-center gap-4 px-6"
           style={{ opacity: 1 - p * 1.4 }}
         >
           <a href="#meniu">
