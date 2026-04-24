@@ -12,8 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Fraunces", "Georgia", "serif"],
-        body: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ['"Amatic SC"', "Caveat", "cursive"],
+        script: ["Caveat", "cursive"],
+        body: ["Nunito", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

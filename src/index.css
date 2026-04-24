@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -57,8 +57,9 @@
     --shadow-pop: 0 20px 60px -20px hsl(342 82% 55% / 0.4);
     --shadow-cream: 0 8px 30px -8px hsl(20 30% 12% / 0.12);
 
-    --font-display: 'Fraunces', Georgia, serif;
-    --font-body: 'Space Grotesk', system-ui, sans-serif;
+    --font-display: 'Amatic SC', 'Caveat', cursive;
+    --font-script: 'Caveat', cursive;
+    --font-body: 'Nunito', system-ui, sans-serif;
 
     --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
@@ -78,13 +79,15 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-optical-sizing: auto;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
   }
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display); }
+  .font-display { font-family: var(--font-display); letter-spacing: 0.02em; }
+  .font-script { font-family: var(--font-script); }
   .font-body { font-family: var(--font-body); }
   .text-balance { text-wrap: balance; }
 
