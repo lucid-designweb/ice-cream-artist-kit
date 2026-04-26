@@ -161,10 +161,10 @@ const Index = () => {
         </div>
 
         {/* Stage: GELATERIA (back) + cone (mid) — scoops only, fills the space */}
-        <div className="relative w-full flex-1 flex items-end justify-center mt-1 sm:mt-2 min-h-0 overflow-hidden">
+        <div className="relative w-full flex-1 flex items-start justify-center mt-1 sm:mt-2 min-h-0 overflow-hidden">
           {/* GELATERIA — behind the cone */}
           <div
-            className="absolute inset-x-0 bottom-[20%] z-10 text-center pointer-events-none px-2"
+            className="absolute inset-x-0 bottom-[8%] z-10 text-center pointer-events-none px-2"
             style={{ opacity: textOpacity }}
           >
             <div
@@ -175,8 +175,8 @@ const Index = () => {
             </div>
           </div>
 
-          {/* THE CONE — scoops only; cone tip clipped via clip-path so the image
-              naturally fills from top to bottom of the stage (no empty space above) */}
+          {/* THE CONE — scoops only. Image scaled so its top 58% (the scoops) fills
+              the entire stage height; bottom 42% (cone tip) is clipped away. */}
           <img
             src={heroCone}
             alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
@@ -184,13 +184,10 @@ const Index = () => {
             height={1536}
             className="relative z-20 pointer-events-none select-none block"
             style={{
-              // Visible region = top 58% of source. Stage height fills with that.
-              height: "100%",
+              // 100% / 0.58 ≈ 172% so the visible top portion equals stage height
+              height: "172%",
               width: "auto",
               maxWidth: "none",
-              objectFit: "contain",
-              objectPosition: "top center",
-              // Clip everything below ~58% of the source image (the brown bar / cone tip)
               clipPath: "inset(0 0 42% 0)",
               WebkitClipPath: "inset(0 0 42% 0)",
               opacity: coneOpacity,
