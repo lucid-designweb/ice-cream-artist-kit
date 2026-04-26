@@ -147,10 +147,10 @@ const Index = () => {
         </div>
       </header>
 
-      {/* ───── HERO — stationary giant cone, bottom fades upward on scroll ───── */}
+      {/* ───── HERO — scoops only, GELATERIA behind, ANIELA in front ───── */}
       <section
         id="top"
-        className="relative min-h-[100svh] flex flex-col items-center grain overflow-hidden bg-gradient-paper pt-24 sm:pt-28 pb-8"
+        className="relative min-h-[100svh] flex flex-col items-center grain overflow-hidden bg-gradient-paper pt-20 sm:pt-24 pb-6"
       >
         {/* soft color blocks */}
         <div className="pointer-events-none absolute -top-20 -left-24 h-64 w-64 sm:h-80 sm:w-80 bg-coral/30 blob animate-float-slow" />
@@ -159,7 +159,7 @@ const Index = () => {
 
         {/* small location chip */}
         <div
-          className="relative z-30 inline-flex items-center gap-2 rounded-full border border-cocoa/15 bg-cream/85 px-3 sm:px-4 py-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]"
+          className="relative z-40 inline-flex items-center gap-2 rounded-full border border-cocoa/15 bg-cream/85 px-3 sm:px-4 py-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]"
           style={{ opacity: textOpacity }}
         >
           <span className="h-1.5 w-1.5 rounded-full bg-rose animate-pulse" />
@@ -167,54 +167,55 @@ const Index = () => {
           <span className="sm:hidden">Bistrița · din 2014</span>
         </div>
 
-        {/* GELATERIA — top */}
-        <div
-          className="relative z-20 text-center pointer-events-none px-2 mt-4 sm:mt-6"
-          style={{ opacity: textOpacity }}
-        >
+        {/* Stage: GELATERIA (back) + cone (mid) — scoops only */}
+        <div className="relative w-full flex-1 flex items-center justify-center mt-3 sm:mt-4 min-h-0">
+          {/* GELATERIA — behind the cone */}
           <div
-            className="font-display text-cocoa leading-[0.85] tracking-[0.04em] whitespace-nowrap"
-            style={{ fontSize: "clamp(3rem, 14vw, 14rem)" }}
+            className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 text-center pointer-events-none px-2"
+            style={{ opacity: textOpacity }}
           >
-            GELATERIA
+            <div
+              className="font-display text-cocoa leading-[0.85] tracking-[0.04em] whitespace-nowrap"
+              style={{ fontSize: "clamp(3rem, 15vw, 15rem)" }}
+            >
+              GELATERIA
+            </div>
           </div>
-        </div>
 
-        {/* THE CONE — stationary, big, bottom fades on scroll */}
-        <div className="relative z-10 flex-1 w-full flex items-center justify-center my-2 sm:my-4 min-h-0">
+          {/* THE CONE — only scoops visible (cropped above brown waffle bar) */}
           <img
             src={heroCone}
             alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
             width={1024}
             height={1536}
-            className="pointer-events-none select-none"
+            className="relative z-20 pointer-events-none select-none"
             style={{
-              height: "min(70vh, 900px)",
-              maxWidth: "92vw",
+              height: "min(78vh, 940px)",
+              maxWidth: "94vw",
               width: "auto",
               objectFit: "contain",
               WebkitMaskImage: coneMask,
               maskImage: coneMask,
-              filter: "drop-shadow(0 40px 60px hsl(350 70% 40% / 0.28))",
-              transition: "mask-image 80ms linear, -webkit-mask-image 80ms linear",
+              filter: "drop-shadow(0 30px 50px hsl(350 70% 40% / 0.30))",
+              transition: "mask-image 60ms linear, -webkit-mask-image 60ms linear",
             }}
           />
         </div>
 
-        {/* ANIELA — bottom */}
+        {/* ANIELA — below cone, in front */}
         <div
-          className="relative z-20 text-center pointer-events-none px-2"
+          className="relative z-30 text-center pointer-events-none px-2 -mt-2 sm:-mt-3"
           style={{ opacity: textOpacity }}
         >
           <div
             className="font-display text-rose leading-[0.85] tracking-[0.04em] whitespace-nowrap"
-            style={{ fontSize: "clamp(3.5rem, 17vw, 17rem)" }}
+            style={{ fontSize: "clamp(3.25rem, 16vw, 16rem)" }}
           >
             ANIELA
           </div>
           <div
-            className="font-script text-cocoa/75 mt-1 sm:mt-2"
-            style={{ fontSize: "clamp(1rem, 2.4vw, 1.85rem)" }}
+            className="font-script text-cocoa/75 mt-2 sm:mt-3"
+            style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.7rem)" }}
           >
             cafenea · patiserie · gelato bar
           </div>
@@ -222,7 +223,7 @@ const Index = () => {
 
         {/* CTA strip */}
         <div
-          className="relative z-30 mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-4"
+          className="relative z-40 mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-4"
           style={{ opacity: 1 - p * 1.4 }}
         >
           <a href="#meniu">
