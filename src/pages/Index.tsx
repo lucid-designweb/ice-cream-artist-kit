@@ -108,13 +108,17 @@ const Index = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Hero scroll progression — cone stays put, bottom of it fades up as you scroll
+  // Hero scroll progression — only the scoops (top portion) are visible.
+  // The bottom edge of the visible scoops fades upward as the user scrolls.
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
   const p = Math.min(scrollY / (vh * 0.9), 1);
-  // Mask: fully visible at p=0, mask edge climbs from bottom (0%) to top (100%)
-  // We use a vertical gradient mask whose transparent zone grows from bottom upward.
-  const maskTop = 100 - p * 100; // % where it becomes opaque
-  const coneMask = `linear-gradient(to bottom, #000 0%, #000 ${Math.max(maskTop - 20, 0)}%, transparent ${maskTop}%)`;
+  // Crop: original image's brown waffle bar starts ~58% from top.
+  // We hide everything below that with a hard mask, then add a soft fade above it.
+  const cropEnd = 58; // % — bottom of scoops region in source image
+  // As we scroll, the visible region's bottom edge climbs from cropEnd → 0.
+  const visibleBottom = cropEnd * (1 - p); // %
+  const fadeStart = Math.max(visibleBottom - 18, 0);
+  const coneMask = `linear-gradient(to bottom, #000 0%, #000 ${fadeStart}%, transparent ${visibleBottom}%, transparent 100%)`;
   const textOpacity = 1 - p * 0.9;
 
   return (
