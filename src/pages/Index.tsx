@@ -108,15 +108,11 @@ const Index = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Hero scroll progression — only the scoops (top portion) are visible.
-  // Subtle fade: requires scrolling further before the scoops disappear.
+  // Hero scroll progression — image stays put, whole thing fades in transparency.
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-  const p = Math.min(scrollY / (vh * 1.6), 1); // slower progression
-  const cropEnd = 58; // % — bottom of scoops region in source image
-  const visibleBottom = cropEnd * (1 - p * 0.95);
-  const fadeStart = Math.max(visibleBottom - 30, 0); // wider, softer fade band
-  const coneMask = `linear-gradient(to bottom, #000 0%, #000 ${fadeStart}%, transparent ${visibleBottom}%, transparent 100%)`;
-  const textOpacity = 1 - p * 0.85;
+  const p = Math.min(scrollY / (vh * 1.1), 1);
+  const coneOpacity = 1 - p * 0.95;
+  const textOpacity = 1 - p * 0.9;
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -165,10 +161,10 @@ const Index = () => {
         </div>
 
         {/* Stage: GELATERIA (back) + cone (mid) — scoops only, fills the space */}
-        <div className="relative w-full flex-1 flex items-end justify-center mt-1 sm:mt-2 min-h-0 overflow-hidden">
+        <div className="relative w-full flex-1 flex items-start justify-center mt-1 sm:mt-2 min-h-0 overflow-hidden">
           {/* GELATERIA — behind the cone */}
           <div
-            className="absolute inset-x-0 bottom-[20%] z-10 text-center pointer-events-none px-2"
+            className="absolute inset-x-0 bottom-[8%] z-10 text-center pointer-events-none px-2"
             style={{ opacity: textOpacity }}
           >
             <div
@@ -179,30 +175,26 @@ const Index = () => {
             </div>
           </div>
 
-          {/* THE CONE — only scoops visible; image is huge and pushed down so cropped
-              edge meets the bottom of the stage with no empty space above */}
-          <div className="relative z-20 w-full h-full overflow-hidden flex items-end justify-center">
-            <img
-              src={heroCone}
-              alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
-              width={1024}
-              height={1536}
-              className="pointer-events-none select-none block"
-              style={{
-                // Image is masked to top ~58%. We push image down by 42% so the
-                // cropped edge lands at the stage bottom. Height is set so the
-                // visible 58% fills the stage vertically (height ≈ stage / 0.58).
-                height: "172%",
-                width: "auto",
-                maxWidth: "none",
-                transform: "translateY(42%)",
-                WebkitMaskImage: coneMask,
-                maskImage: coneMask,
-                filter: "drop-shadow(0 30px 50px hsl(350 70% 40% / 0.30))",
-                transition: "mask-image 60ms linear, -webkit-mask-image 60ms linear",
-              }}
-            />
-          </div>
+          {/* THE CONE — scoops only. Image scaled so its top 58% (the scoops) fills
+              the entire stage height; bottom 42% (cone tip) is clipped away. */}
+          <img
+            src={heroCone}
+            alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
+            width={1024}
+            height={1536}
+            className="relative z-20 pointer-events-none select-none block"
+            style={{
+              // 100% / 0.58 ≈ 172% so the visible top portion equals stage height
+              height: "172%",
+              width: "auto",
+              maxWidth: "none",
+              clipPath: "inset(0 0 42% 0)",
+              WebkitClipPath: "inset(0 0 42% 0)",
+              opacity: coneOpacity,
+              filter: "drop-shadow(0 30px 50px hsl(350 70% 40% / 0.30))",
+              transition: "opacity 80ms linear",
+            }}
+          />
         </div>
 
         {/* ANIELA — below cone, in front */}
