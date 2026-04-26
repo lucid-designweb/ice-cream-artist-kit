@@ -167,11 +167,11 @@ const Index = () => {
           <span className="sm:hidden">Bistrița · din 2014</span>
         </div>
 
-        {/* Stage: GELATERIA (back) + cone (mid) — scoops only */}
-        <div className="relative w-full flex-1 flex items-center justify-center mt-3 sm:mt-4 min-h-0">
-          {/* GELATERIA — behind the cone */}
+        {/* Stage: GELATERIA (back) + cone (mid) — scoops only, anchored to bottom */}
+        <div className="relative w-full flex-1 flex items-end justify-center mt-3 sm:mt-4 min-h-0 overflow-hidden">
+          {/* GELATERIA — behind the cone, vertically centered behind scoops */}
           <div
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 text-center pointer-events-none px-2"
+            className="absolute inset-x-0 bottom-[18%] z-10 text-center pointer-events-none px-2"
             style={{ opacity: textOpacity }}
           >
             <div
@@ -182,7 +182,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* THE CONE — only scoops visible (cropped above brown waffle bar) */}
+          {/* THE CONE — only scoops visible; image sits low so bottom of scoops touches bar */}
           <img
             src={heroCone}
             alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
@@ -190,10 +190,13 @@ const Index = () => {
             height={1536}
             className="relative z-20 pointer-events-none select-none"
             style={{
-              height: "min(78vh, 940px)",
-              maxWidth: "94vw",
+              // Image is masked to ~top 58%. To anchor that visible bottom edge to
+              // the stage bottom, push image down by the hidden 42% of its height.
+              height: "min(115vh, 1500px)",
+              maxWidth: "150vw",
               width: "auto",
               objectFit: "contain",
+              transform: "translateY(42%)",
               WebkitMaskImage: coneMask,
               maskImage: coneMask,
               filter: "drop-shadow(0 30px 50px hsl(350 70% 40% / 0.30))",
