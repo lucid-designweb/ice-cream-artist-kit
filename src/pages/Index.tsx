@@ -336,7 +336,7 @@ const Index = () => {
             </div>
 
             <div className="mt-10 relative overflow-hidden rounded-3xl aspect-[5/3] shadow-cream">
-              <img src={dessertWaffle} alt="Waffle cu fructe și înghețată" loading="lazy"
+              <img src={dessertPavlova} alt="Pavlova cu fructe de pădure" loading="lazy"
                    className="h-full w-full object-cover" />
             </div>
           </div>
@@ -391,7 +391,7 @@ const Index = () => {
               <img src={dessertSundae} alt="Cupă specială Grandissimo" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream">
-              <img src={dessertWaffle} alt="Hot Berry Gelato" loading="lazy" className="h-full w-full object-cover" />
+              <img src={dessertWaffle} alt="Waffle cu fructe, înghețată și ciocolată" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream md:translate-y-10">
               <img src={dessertLemonade} alt="Limonată de casă" loading="lazy" className="h-full w-full object-cover" />
