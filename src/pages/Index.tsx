@@ -119,21 +119,27 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* ───── NAV ───── */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/75 border-b border-cocoa/5">
-        <div className="container flex items-center justify-between py-4">
-          <a href="#top" className="flex items-center gap-2.5 group">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-lg shadow-pop transition-transform group-hover:rotate-12">A</span>
-            <span className="font-display text-2xl tracking-wider">Aniela</span>
+        <div className="container flex items-center justify-between py-3 sm:py-4">
+          <a href="#top" className="flex items-center gap-2 sm:gap-2.5 group">
+            <span className="inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-base sm:text-lg shadow-pop transition-transform group-hover:rotate-12">A</span>
+            <span className="font-display text-xl sm:text-2xl tracking-wider">Aniela</span>
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
+          <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
             <a href="#inghetata" className="hover:text-rose transition-colors">Înghețată</a>
             <a href="#cafea" className="hover:text-rose transition-colors">Cafea</a>
             <a href="#patiserie" className="hover:text-rose transition-colors">Patiserie</a>
             <a href="#bauturi" className="hover:text-rose transition-colors">Băuturi</a>
             <a href="#vizita" className="hover:text-rose transition-colors">Vizită</a>
           </nav>
-          <a href="tel:+40744601167" className="hidden md:inline-flex">
+          <a href="tel:+40744601167" className="hidden lg:inline-flex">
             <Button variant="default" className="rounded-full bg-cocoa hover:bg-cocoa/90 text-cream gap-2 text-xs uppercase tracking-widest">
               <Phone className="h-4 w-4" /> 0744 601 167
+            </Button>
+          </a>
+          {/* Mobile / tablet: compact phone button */}
+          <a href="tel:+40744601167" className="lg:hidden" aria-label="Sună 0744 601 167">
+            <Button variant="default" size="icon" className="rounded-full h-10 w-10 bg-cocoa hover:bg-cocoa/90 text-cream">
+              <Phone className="h-4 w-4" />
             </Button>
           </a>
         </div>
@@ -172,7 +178,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* THE CONE — centered, scoops only (bottom 42% of source = cone tip clipped) */}
+        {/* THE CONE — centered, scoops only (bottom 42% of source = cone tip clipped). Sits on top of the ANIELA wordmark to ground the composition. */}
         <img
           src={heroCone}
           alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
@@ -180,8 +186,8 @@ const Index = () => {
           height={1536}
           className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none block"
           style={{
-            top: "12%",
-            height: "75%",
+            top: "18%",
+            height: "88%",
             width: "auto",
             maxWidth: "none",
             clipPath: "inset(0 0 42% 0)",
@@ -292,7 +298,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
-            <h2 className="mt-4 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] pb-2 break-words">
+            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}>
               Cafea de<br/>specialitate
             </h2>
             <p className="mt-6 text-cocoa/70 leading-relaxed max-w-md">
@@ -367,8 +373,8 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-10 mb-14">
             <div className="md:col-span-7">
               <p className="text-[11px] uppercase tracking-[0.3em] text-cocoa/70">04 — Cupele casei</p>
-              <h2 className="mt-4 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] pb-2 break-words">
-                Înghețată<br/><span className="font-script text-rose normal-case text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-normal leading-[1.1] inline-block pb-1">artizanală</span>
+              <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}>
+                Înghețată<br/><span className="font-script text-rose normal-case tracking-normal leading-[1.1] inline-block pb-1" style={{ fontSize: "clamp(2rem, 7vw, 5.5rem)" }}>artizanală</span>
               </h2>
             </div>
             <div className="md:col-span-5 self-end">
