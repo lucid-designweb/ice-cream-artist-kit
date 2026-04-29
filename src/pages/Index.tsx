@@ -367,8 +367,8 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-10 mb-14">
             <div className="md:col-span-7">
               <p className="text-[11px] uppercase tracking-[0.3em] text-cocoa/70">04 — Cupele casei</p>
-              <h2 className="mt-4 font-display text-6xl md:text-8xl leading-[1] pb-2">
-                Înghețată<br/><span className="font-script text-rose normal-case text-5xl md:text-7xl tracking-normal leading-[1.1] inline-block pb-1">artizanală</span>
+              <h2 className="mt-4 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] pb-2 break-words">
+                Înghețată<br/><span className="font-script text-rose normal-case text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-normal leading-[1.1] inline-block pb-1">artizanală</span>
               </h2>
             </div>
             <div className="md:col-span-5 self-end">
