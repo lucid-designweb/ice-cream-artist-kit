@@ -298,7 +298,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
-            <h2 className="mt-4 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] pb-2 break-words">
+            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}>
               Cafea de<br/>specialitate
             </h2>
             <p className="mt-6 text-cocoa/70 leading-relaxed max-w-md">
