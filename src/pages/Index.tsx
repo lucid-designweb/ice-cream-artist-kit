@@ -178,7 +178,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* THE CONE — centered, scoops only (bottom 42% of source = cone tip clipped) */}
+        {/* THE CONE — centered, scoops only (bottom 42% of source = cone tip clipped). Sits on top of the ANIELA wordmark to ground the composition. */}
         <img
           src={heroCone}
           alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
@@ -186,8 +186,8 @@ const Index = () => {
           height={1536}
           className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none block"
           style={{
-            top: "12%",
-            height: "75%",
+            top: "18%",
+            height: "88%",
             width: "auto",
             maxWidth: "none",
             clipPath: "inset(0 0 42% 0)",
