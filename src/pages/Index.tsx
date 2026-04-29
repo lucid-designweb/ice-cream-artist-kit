@@ -86,14 +86,16 @@ const reviews = [
 /* ───────── Reusable menu row ───────── */
 
 const MenuRow = ({ name, qty, price, dark = false }: { name: string; qty: string; price: string; dark?: boolean }) => (
-  <div className="flex items-baseline gap-3 py-2.5">
-    <span className="font-display text-xl md:text-2xl">{name}</span>
-    <span className={`text-xs uppercase tracking-widest ${dark ? "text-cream/50" : "text-cocoa/50"}`}>{qty}</span>
+  <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 gap-y-1 py-2.5">
+    <div className="flex min-w-0 items-baseline gap-2.5">
+      <span className="min-w-0 font-display text-xl leading-[1.05] break-words md:text-2xl">{name}</span>
+      <span className={`shrink-0 text-xs uppercase tracking-widest ${dark ? "text-cream/50" : "text-cocoa/50"}`}>{qty}</span>
+    </div>
+    <span className="row-span-2 shrink-0 self-center whitespace-nowrap pl-2 font-display text-xl md:text-2xl">{price}</span>
     <span
-      className="flex-1 translate-y-[-5px]"
+      className="col-start-1 min-w-0"
       style={{ borderBottom: `2px dotted ${dark ? "hsl(var(--cream) / 0.25)" : "hsl(var(--cocoa) / 0.3)"}` }}
     />
-    <span className="font-display text-xl md:text-2xl">{price}</span>
   </div>
 );
 
@@ -295,10 +297,10 @@ const Index = () => {
 
       {/* ───── CAFEA ───── */}
       <section id="cafea" className="py-24 md:py-32 bg-mustard/15 grain">
-        <div className="container grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-5">
+        <div className="container grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-4 xl:col-span-5 xl:max-w-[28rem]">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
-            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}>
+            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 8vw, 6.25rem)" }}>
               Cafea de<br/>specialitate
             </h2>
             <p className="mt-6 text-cocoa/70 leading-relaxed max-w-md">
@@ -315,8 +317,8 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="md:col-span-7">
-            <div className="grid sm:grid-cols-2 gap-x-10">
+          <div className="lg:col-span-8 xl:col-span-7">
+            <div className="grid gap-x-10 xl:grid-cols-2">
               {cafea.map(([n, ml, p]) => <MenuRow key={n} name={n} qty={ml} price={p} />)}
             </div>
           </div>
@@ -370,14 +372,14 @@ const Index = () => {
         <div className="absolute -bottom-32 -right-32 h-96 w-96 bg-rose/20 blob-2 animate-float-slow" />
 
         <div className="container relative">
-          <div className="grid md:grid-cols-12 gap-10 mb-14">
-            <div className="md:col-span-7">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-10 mb-14">
+            <div className="lg:col-span-7">
               <p className="text-[11px] uppercase tracking-[0.3em] text-cocoa/70">04 — Cupele casei</p>
               <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 9vw, 7rem)" }}>
                 Înghețată<br/><span className="font-script text-rose normal-case tracking-normal leading-[1.1] inline-block pb-1" style={{ fontSize: "clamp(2rem, 7vw, 5.5rem)" }}>artizanală</span>
               </h2>
             </div>
-            <div className="md:col-span-5 self-end">
+            <div className="lg:col-span-5 self-end">
               <p className="text-cocoa/75 leading-relaxed">
                 Pentru a alege sortimente de înghețată pe care doriți să le serviți la cornet sau la
                 pahar, vă invităm să comandați de la vitrină. Cupele speciale sunt rezultatul
@@ -399,7 +401,7 @@ const Index = () => {
           </div>
 
           <div className="rounded-3xl bg-cream p-8 md:p-12">
-            <div className="grid sm:grid-cols-2 gap-x-12">
+            <div className="grid gap-x-12 lg:grid-cols-2">
               {inghetata.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
             </div>
 
