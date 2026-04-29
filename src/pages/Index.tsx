@@ -119,21 +119,27 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* ───── NAV ───── */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/75 border-b border-cocoa/5">
-        <div className="container flex items-center justify-between py-4">
-          <a href="#top" className="flex items-center gap-2.5 group">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-lg shadow-pop transition-transform group-hover:rotate-12">A</span>
-            <span className="font-display text-2xl tracking-wider">Aniela</span>
+        <div className="container flex items-center justify-between py-3 sm:py-4">
+          <a href="#top" className="flex items-center gap-2 sm:gap-2.5 group">
+            <span className="inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-base sm:text-lg shadow-pop transition-transform group-hover:rotate-12">A</span>
+            <span className="font-display text-xl sm:text-2xl tracking-wider">Aniela</span>
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
+          <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
             <a href="#inghetata" className="hover:text-rose transition-colors">Înghețată</a>
             <a href="#cafea" className="hover:text-rose transition-colors">Cafea</a>
             <a href="#patiserie" className="hover:text-rose transition-colors">Patiserie</a>
             <a href="#bauturi" className="hover:text-rose transition-colors">Băuturi</a>
             <a href="#vizita" className="hover:text-rose transition-colors">Vizită</a>
           </nav>
-          <a href="tel:+40744601167" className="hidden md:inline-flex">
+          <a href="tel:+40744601167" className="hidden lg:inline-flex">
             <Button variant="default" className="rounded-full bg-cocoa hover:bg-cocoa/90 text-cream gap-2 text-xs uppercase tracking-widest">
               <Phone className="h-4 w-4" /> 0744 601 167
+            </Button>
+          </a>
+          {/* Mobile / tablet: compact phone button */}
+          <a href="tel:+40744601167" className="lg:hidden" aria-label="Sună 0744 601 167">
+            <Button variant="default" size="icon" className="rounded-full h-10 w-10 bg-cocoa hover:bg-cocoa/90 text-cream">
+              <Phone className="h-4 w-4" />
             </Button>
           </a>
         </div>
