@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Phone, MapPin, Clock, Star, Instagram, Facebook, ArrowRight, Coffee, IceCream, Cake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroCone from "@/assets/hero-cone.png";
+import logoAniela from "@/assets/logo-gelateria-aniela.png";
 import dessertWaffle from "@/assets/dessert-waffle.jpg";
 import dessertLemonade from "@/assets/dessert-lemonade.jpg";
 import dessertSundae from "@/assets/dessert-sundae.jpg";
@@ -122,9 +123,14 @@ const Index = () => {
       {/* ───── NAV ───── */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/75 border-b border-cocoa/5">
         <div className="container flex items-center justify-between py-3 sm:py-4">
-          <a href="#top" className="flex items-center gap-2 sm:gap-2.5 group">
-            <span className="inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-base sm:text-lg shadow-pop transition-transform group-hover:rotate-12">A</span>
-            <span className="font-display text-xl sm:text-2xl tracking-wider">Aniela</span>
+          <a href="#top" className="flex items-center gap-2 sm:gap-2.5 group" aria-label="Gelateria Aniela — acasă">
+            <img
+              src={logoAniela}
+              alt="Gelateria Aniela — înghețată tradițională"
+              width={180}
+              height={180}
+              className="h-10 sm:h-12 w-auto transition-transform group-hover:-rotate-3"
+            />
           </a>
           <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
             <a href="#inghetata" className="hover:text-rose transition-colors">Înghețată</a>
@@ -300,7 +306,7 @@ const Index = () => {
         <div className="container grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4 xl:col-span-5 xl:max-w-[28rem]">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
-            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2.5rem, 8vw, 6.25rem)" }}>
+            <h2 className="mt-4 font-display leading-[0.95] pb-2 break-words hyphens-none" style={{ fontSize: "clamp(2.25rem, 5.2vw, 4.5rem)" }}>
               Cafea de<br/>specialitate
             </h2>
             <p className="mt-6 text-cocoa/70 leading-relaxed max-w-md">
