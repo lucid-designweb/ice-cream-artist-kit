@@ -108,11 +108,12 @@ const Index = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Hero scroll progression — image stays put, whole thing fades in transparency.
+  // Hero scroll progression — image stays put, fades out as you scroll.
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
-  const p = Math.min(scrollY / (vh * 1.1), 1);
-  const coneOpacity = 1 - p * 0.95;
-  const textOpacity = 1 - p * 0.9;
+  const p = Math.min(scrollY / (vh * 0.9), 1);
+  const coneOpacity = Math.max(0, 1 - p * 1.1);
+  const textOpacity = Math.max(0, 1 - p * 1.2);
+  const ctaOpacity = Math.max(0, 1 - p * 1.6);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -121,9 +122,7 @@ const Index = () => {
         <div className="container flex items-center justify-between py-4">
           <a href="#top" className="flex items-center gap-2.5 group">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-lg shadow-pop transition-transform group-hover:rotate-12">A</span>
-            <span className="font-display text-2xl tracking-wider">
-              Aniela
-            </span>
+            <span className="font-display text-2xl tracking-wider">Aniela</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
             <a href="#inghetata" className="hover:text-rose transition-colors">Înghețată</a>
@@ -140,19 +139,19 @@ const Index = () => {
         </div>
       </header>
 
-      {/* ───── HERO — scoops only, GELATERIA behind, ANIELA in front ───── */}
+      {/* ───── HERO ───── */}
       <section
         id="top"
-        className="relative min-h-[100svh] flex flex-col items-center grain overflow-hidden bg-gradient-paper pt-20 sm:pt-24 pb-6"
+        className="relative h-[100svh] min-h-[640px] w-full grain overflow-hidden bg-gradient-paper"
       >
-        {/* soft color blocks */}
+        {/* soft color blobs */}
         <div className="pointer-events-none absolute -top-20 -left-24 h-64 w-64 sm:h-80 sm:w-80 bg-coral/30 blob animate-float-slow" />
         <div className="pointer-events-none absolute top-1/3 -right-24 h-72 w-72 sm:h-96 sm:w-96 bg-mint/30 blob-2 animate-float-slower" />
         <div className="pointer-events-none absolute bottom-10 left-1/4 h-48 w-48 sm:h-64 sm:w-64 bg-mustard/20 blob animate-float-slow" />
 
-        {/* small location chip */}
+        {/* Top chip */}
         <div
-          className="relative z-40 inline-flex items-center gap-2 rounded-full border border-cocoa/15 bg-cream/85 px-3 sm:px-4 py-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em]"
+          className="absolute top-24 sm:top-28 left-1/2 -translate-x-1/2 z-40 inline-flex items-center gap-2 rounded-full border border-cocoa/15 bg-cream/85 px-3 sm:px-4 py-1.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] whitespace-nowrap"
           style={{ opacity: textOpacity }}
         >
           <span className="h-1.5 w-1.5 rounded-full bg-rose animate-pulse" />
@@ -160,87 +159,82 @@ const Index = () => {
           <span className="sm:hidden">Bistrița · din 2014</span>
         </div>
 
-        {/* Stage: GELATERIA (back) + cone (mid) — scoops only, fills the space */}
-        <div className="relative w-full flex-1 flex items-start justify-center mt-1 sm:mt-2 min-h-0 overflow-hidden">
-          {/* GELATERIA — behind the cone */}
-          <div
-            className="absolute inset-x-0 bottom-[8%] z-10 text-center pointer-events-none px-2"
-            style={{ opacity: textOpacity }}
-          >
-            <div
-              className="font-display text-cocoa leading-[0.85] tracking-[0.04em] whitespace-nowrap"
-              style={{ fontSize: "clamp(3rem, 15vw, 15rem)" }}
-            >
-              GELATERIA
-            </div>
-          </div>
-
-          {/* THE CONE — scoops only. Image scaled so its top 58% (the scoops) fills
-              the entire stage height; bottom 42% (cone tip) is clipped away. */}
-          <img
-            src={heroCone}
-            alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
-            width={1024}
-            height={1536}
-            className="relative z-20 pointer-events-none select-none block"
-            style={{
-              // 100% / 0.58 ≈ 172% so the visible top portion equals stage height
-              height: "172%",
-              width: "auto",
-              maxWidth: "none",
-              clipPath: "inset(0 0 42% 0)",
-              WebkitClipPath: "inset(0 0 42% 0)",
-              opacity: coneOpacity,
-              filter: "drop-shadow(0 30px 50px hsl(350 70% 40% / 0.30))",
-              transition: "opacity 80ms linear",
-            }}
-          />
-        </div>
-
-        {/* ANIELA — below cone, in front */}
+        {/* GELATERIA — behind */}
         <div
-          className="relative z-30 text-center pointer-events-none px-2 -mt-2 sm:-mt-3"
+          className="absolute inset-x-0 top-[28%] sm:top-[24%] z-10 text-center pointer-events-none px-2"
           style={{ opacity: textOpacity }}
         >
           <div
-            className="font-display text-rose leading-[0.85] tracking-[0.04em] whitespace-nowrap"
-            style={{ fontSize: "clamp(3.25rem, 16vw, 16rem)" }}
+            className="font-display text-cocoa leading-[0.85] tracking-[0.04em] whitespace-nowrap"
+            style={{ fontSize: "clamp(3.5rem, 17vw, 17rem)" }}
           >
-            ANIELA
-          </div>
-          <div
-            className="font-script text-cocoa/75 mt-2 sm:mt-3"
-            style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.7rem)" }}
-          >
-            cafenea · patiserie · gelato bar
+            GELATERIA
           </div>
         </div>
 
-        {/* CTA strip */}
-        <div
-          className="relative z-40 mt-5 sm:mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-4"
-          style={{ opacity: 1 - p * 1.4 }}
-        >
-          <a href="#meniu">
-            <Button size="lg" className="rounded-full bg-rose hover:bg-rose-deep text-cream shadow-pop h-11 sm:h-12 px-5 sm:px-7 text-[10px] sm:text-xs uppercase tracking-[0.2em] gap-2 group">
-              Vezi meniul
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </a>
-          <a href="#vizita">
-            <Button size="lg" variant="outline" className="rounded-full border-cocoa text-cocoa hover:bg-cocoa hover:text-cream h-11 sm:h-12 px-5 sm:px-7 text-[10px] sm:text-xs uppercase tracking-[0.2em]">
-              Găsește-ne
-            </Button>
-          </a>
+        {/* THE CONE — centered, scoops only (bottom 42% of source = cone tip clipped) */}
+        <img
+          src={heroCone}
+          alt="Cupă de înghețată artizanală — zmeură, fistic și mango"
+          width={1024}
+          height={1536}
+          className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none block"
+          style={{
+            top: "12%",
+            height: "75%",
+            width: "auto",
+            maxWidth: "none",
+            clipPath: "inset(0 0 42% 0)",
+            WebkitClipPath: "inset(0 0 42% 0)",
+            opacity: coneOpacity,
+            filter: "drop-shadow(0 30px 50px hsl(350 70% 40% / 0.30))",
+            transition: "opacity 80ms linear",
+          }}
+        />
 
-          <div className="w-full sm:w-auto sm:ml-4 flex items-center justify-center gap-2 sm:gap-3 text-sm">
-            <div className="flex items-center gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-rose text-rose" />
-              ))}
+        {/* ANIELA + tagline + CTAs — fixed at the bottom of the hero */}
+        <div
+          className="absolute inset-x-0 bottom-6 sm:bottom-8 z-30 px-4"
+        >
+          <div className="text-center pointer-events-none" style={{ opacity: textOpacity }}>
+            <div
+              className="font-display text-rose leading-[0.85] tracking-[0.04em] whitespace-nowrap"
+              style={{ fontSize: "clamp(3.25rem, 16vw, 16rem)" }}
+            >
+              ANIELA
             </div>
-            <span className="font-display text-lg">4,8</span>
-            <span className="text-cocoa/55 text-[10px] sm:text-xs uppercase tracking-widest">634 recenzii</span>
+            <div
+              className="font-script text-cocoa/75 mt-2 sm:mt-3"
+              style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.7rem)" }}
+            >
+              cafenea · patiserie · gelato bar
+            </div>
+          </div>
+
+          <div
+            className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+            style={{ opacity: ctaOpacity }}
+          >
+            <a href="#meniu">
+              <Button size="lg" className="rounded-full bg-rose hover:bg-rose-deep text-cream shadow-pop h-11 sm:h-12 px-5 sm:px-7 text-[10px] sm:text-xs uppercase tracking-[0.2em] gap-2 group">
+                Vezi meniul
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            <a href="#vizita">
+              <Button size="lg" variant="outline" className="rounded-full border-cocoa text-cocoa hover:bg-cocoa hover:text-cream h-11 sm:h-12 px-5 sm:px-7 text-[10px] sm:text-xs uppercase tracking-[0.2em]">
+                Găsește-ne
+              </Button>
+            </a>
+            <div className="w-full sm:w-auto sm:ml-4 flex items-center justify-center gap-2 sm:gap-3 text-sm">
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-rose text-rose" />
+                ))}
+              </div>
+              <span className="font-display text-lg">4,8</span>
+              <span className="text-cocoa/55 text-[10px] sm:text-xs uppercase tracking-widest">634 recenzii</span>
+            </div>
           </div>
         </div>
       </section>
