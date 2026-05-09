@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import heroCone from "@/assets/hero-cone.png";
 import logoAniela from "@/assets/logo-gelateria-aniela.png";
 import dessertWaffle from "@/assets/dessert-waffle.jpg";
-import dessertLemonade from "@/assets/dessert-lemonade.jpg";
 import dessertSundae from "@/assets/dessert-sundae.jpg";
 import dessertPavlova from "@/assets/dessert-pavlova.jpg";
+import dessertBrownie from "@/assets/dessert-brownie.jpg";
 import shopInterior from "@/assets/shop-interior.jpg";
 
 /* ───────── Menu data — strictly from the printed booklet ───────── */
@@ -63,6 +63,7 @@ const racoritoare = [
   ["Fentimans Botanically Drinks", "275 ml", "12 lei"],
   ["Fresh Simplu", "250 ml", "10 lei"],
   ["Fresh Mixt", "250 ml", "12 lei"],
+  ["Limonată de casă", "500 ml", "18 lei"],
 ];
 
 const inghetata = [
@@ -358,15 +359,9 @@ const Index = () => {
               {waffles.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl bg-blush p-5">
-                <div className="font-display text-3xl">200 g</div>
-                <div className="text-xs text-cocoa/60 uppercase tracking-widest mt-1">porție medie</div>
-              </div>
-              <div className="rounded-2xl bg-mint/40 p-5">
-                <div className="font-display text-3xl">5</div>
-                <div className="text-xs text-cocoa/60 uppercase tracking-widest mt-1">rețete fixe</div>
-              </div>
+            <div className="mt-10 relative overflow-hidden rounded-3xl aspect-[5/3] shadow-cream">
+              <img src={dessertBrownie} alt="Brownie cu înghețată și zmeură" loading="lazy"
+                   width={1024} height={1280} className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
@@ -394,15 +389,12 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream md:translate-y-6">
               <img src={dessertSundae} alt="Cupă specială Grandissimo" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream">
               <img src={dessertWaffle} alt="Waffle cu fructe, înghețată și ciocolată" loading="lazy" className="h-full w-full object-cover" />
-            </div>
-            <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream md:translate-y-10">
-              <img src={dessertLemonade} alt="Limonată de casă" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
 
@@ -450,13 +442,6 @@ const Index = () => {
               {racoritoare.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
             </div>
 
-            <div className="mt-10 rounded-3xl bg-cream p-6 flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-coral/40 grid place-items-center font-display text-2xl">L</div>
-              <div>
-                <div className="font-display text-2xl">Limonată de casă</div>
-                <div className="text-sm text-cocoa/60">lămâie stoarsă, zmeură, mentă · 18 lei / 500 ml</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
