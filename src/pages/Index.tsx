@@ -306,7 +306,7 @@ const Index = () => {
         <div className="container grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4 xl:col-span-5 xl:max-w-[28rem]">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
-            <h2 className="mt-4 font-display leading-[0.95] pb-2 break-words hyphens-none" style={{ fontSize: "clamp(2.25rem, 5.2vw, 4.5rem)" }}>
+            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2rem, 4.2vw, 3.75rem)", wordBreak: "keep-all", overflowWrap: "normal", hyphens: "none" }}>
               Cafea de<br/>specialitate
             </h2>
             <p className="mt-6 text-cocoa/70 leading-relaxed max-w-md">
