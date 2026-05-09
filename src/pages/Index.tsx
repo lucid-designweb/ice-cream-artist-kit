@@ -121,7 +121,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* ───── NAV ───── */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/75 border-b border-cocoa/5">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/75 border-b border-cocoa/5 overflow-visible">
         <div className="container flex items-center justify-between py-3 sm:py-4">
           <a href="#top" className="flex items-center gap-2 sm:gap-2.5 group" aria-label="Gelateria Aniela — acasă">
             <img
@@ -129,7 +129,7 @@ const Index = () => {
               alt="Gelateria Aniela — înghețată tradițională"
               width={180}
               height={180}
-              className="h-16 sm:h-20 md:h-24 w-auto transition-transform group-hover:-rotate-3"
+              className="h-16 sm:h-20 md:h-24 w-auto -my-6 transition-transform group-hover:-rotate-3"
             />
           </a>
           <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
@@ -306,7 +306,7 @@ const Index = () => {
         <div className="container grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4 xl:col-span-5 xl:max-w-[28rem]">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
-            <h2 className="mt-4 font-display leading-[0.95] pb-2 break-words hyphens-none" style={{ fontSize: "clamp(2.25rem, 5.2vw, 4.5rem)" }}>
+            <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2rem, 4.2vw, 3.75rem)", wordBreak: "keep-all", overflowWrap: "normal", hyphens: "none" }}>
               Cafea de<br/>specialitate
             </h2>
             <p className="mt-6 text-cocoa/70 leading-relaxed max-w-md">
@@ -596,19 +596,11 @@ const Index = () => {
       </section>
 
       {/* ───── FOOTER ───── */}
-      <footer className="bg-cream py-10 border-t border-cocoa/10">
+      <footer className="bg-cream py-6 border-t border-cocoa/10 overflow-visible">
         <div className="container flex flex-wrap items-center justify-between gap-6">
-          <img src={logoAniela} alt="Gelateria Aniela" className="h-24 sm:h-28 w-auto" />
+          <img src={logoAniela} alt="Gelateria Aniela" className="h-24 sm:h-28 w-auto -my-8" />
           <p className="text-sm text-cocoa/60">Cafenea · Patiserie · Gelato Bar — Bistrița</p>
-          <div className="flex items-center gap-3">
-            <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a href="https://www.facebook.com/gelateriaaniela/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
-              <Facebook className="h-4 w-4" />
-            </a>
-            <p className="text-xs text-cocoa/50 ml-2">© {new Date().getFullYear()}</p>
-          </div>
+          <p className="text-xs text-cocoa/50">© {new Date().getFullYear()} · Toate drepturile rezervate</p>
         </div>
       </footer>
     </div>
