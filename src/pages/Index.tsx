@@ -574,10 +574,10 @@ const Index = () => {
                     Vezi pe hartă
                   </Button>
                 </a>
-                <a href="#" aria-label="Instagram" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
+                <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Instagram" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
                   <Instagram className="h-4 w-4" />
                 </a>
-                <a href="#" aria-label="Facebook" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
+                <a href="https://ro-ro.facebook.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Facebook" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
                   <Facebook className="h-4 w-4" />
                 </a>
               </div>
@@ -598,12 +598,17 @@ const Index = () => {
       {/* ───── FOOTER ───── */}
       <footer className="bg-cream py-10 border-t border-cocoa/10">
         <div className="container flex flex-wrap items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose text-cream font-display text-lg">A</span>
-            <span className="font-display text-xl tracking-wider">Gelateria Aniela</span>
-          </div>
+          <img src={logoAniela} alt="Gelateria Aniela" className="h-16 w-auto" />
           <p className="text-sm text-cocoa/60">Cafenea · Patiserie · Gelato Bar — Bistrița</p>
-          <p className="text-xs text-cocoa/50">© {new Date().getFullYear()} · Toate drepturile rezervate</p>
+          <div className="flex items-center gap-3">
+            <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a href="https://ro-ro.facebook.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
+              <Facebook className="h-4 w-4" />
+            </a>
+            <p className="text-xs text-cocoa/50 ml-2">© {new Date().getFullYear()}</p>
+          </div>
         </div>
       </footer>
     </div>
