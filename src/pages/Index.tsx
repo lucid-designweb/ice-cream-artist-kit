@@ -569,15 +569,15 @@ const Index = () => {
               </div>
 
               <div className="mt-10 flex gap-4">
-                <a href="https://www.google.com/maps?q=Gelateria+Aniela+Bistrita" target="_blank" rel="noreferrer">
+                <a href="https://www.google.com/maps?q=Gelateria+Aniela+Bistrita" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="rounded-full bg-coral hover:bg-coral/90 text-cocoa h-12 px-7 text-xs uppercase tracking-[0.2em]">
                     Vezi pe hartă
                   </Button>
                 </a>
-                <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Instagram" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
+                <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
                   <Instagram className="h-4 w-4" />
                 </a>
-                <a href="https://ro-ro.facebook.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Facebook" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
+                <a href="https://www.facebook.com/gelateriaaniela/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-12 w-12 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-cocoa transition-colors">
                   <Facebook className="h-4 w-4" />
                 </a>
               </div>
@@ -601,10 +601,10 @@ const Index = () => {
           <img src={logoAniela} alt="Gelateria Aniela" className="h-24 sm:h-28 w-auto" />
           <p className="text-sm text-cocoa/60">Cafenea · Patiserie · Gelato Bar — Bistrița</p>
           <div className="flex items-center gap-3">
-            <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
+            <a href="https://www.instagram.com/gelateriaaniela/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
               <Instagram className="h-4 w-4" />
             </a>
-            <a href="https://ro-ro.facebook.com/gelateriaaniela/" target="_blank" rel="noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
+            <a href="https://www.facebook.com/gelateriaaniela/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full border border-cocoa/20 flex items-center justify-center hover:bg-cocoa hover:text-cream transition-colors">
               <Facebook className="h-4 w-4" />
             </a>
             <p className="text-xs text-cocoa/50 ml-2">© {new Date().getFullYear()}</p>
