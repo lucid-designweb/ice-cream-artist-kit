@@ -7,7 +7,7 @@ import dessertWaffle from "@/assets/dessert-waffle.jpg";
 import dessertSundae from "@/assets/dessert-sundae.jpg";
 import dessertPavlova from "@/assets/dessert-pavlova.jpg";
 import dessertBrownie from "@/assets/dessert-brownie.jpg";
-import shopInterior from "@/assets/shop-interior.jpg";
+import shopInterior from "@/assets/shop-exterior.jpg";
 
 /* ───────── Menu data — strictly from the printed booklet ───────── */
 
