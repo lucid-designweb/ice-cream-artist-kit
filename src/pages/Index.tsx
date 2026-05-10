@@ -63,7 +63,11 @@ const racoritoare = [
   ["Fentimans Botanically Drinks", "275 ml", "12 lei"],
   ["Fresh Simplu", "250 ml", "10 lei"],
   ["Fresh Mixt", "250 ml", "12 lei"],
-  ["Limonată de casă", "500 ml", "18 lei"],
+  ["Limonadă de casă — Clasică", "500 ml", "18 lei"],
+  ["Limonadă de casă — Zmeură & Mentă", "500 ml", "19 lei"],
+  ["Limonadă de casă — Căpșuni & Busuioc", "500 ml", "19 lei"],
+  ["Limonadă de casă — Fructul Pasiunii", "500 ml", "20 lei"],
+  ["Limonadă de casă — Ghimbir & Lime", "500 ml", "19 lei"],
 ];
 
 const inghetata = [
@@ -345,7 +349,7 @@ const Index = () => {
             </div>
 
             <div className="mt-10 relative overflow-hidden rounded-3xl aspect-[5/3] shadow-cream">
-              <img src={dessertPavlova} alt="Pavlova cu fructe de pădure" loading="lazy"
+              <img src={dessertBrownie} alt="Brownie cu înghețată și zmeură" loading="lazy"
                    className="h-full w-full object-cover" />
             </div>
           </div>
@@ -360,8 +364,8 @@ const Index = () => {
             </div>
 
             <div className="mt-10 relative overflow-hidden rounded-3xl aspect-[5/3] shadow-cream">
-              <img src={dessertBrownie} alt="Brownie cu înghețată și zmeură" loading="lazy"
-                   width={1024} height={1280} className="h-full w-full object-cover" />
+              <img src={dessertWaffle} alt="Waffle cu fructe, înghețată și ciocolată" loading="lazy"
+                   className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
@@ -394,7 +398,7 @@ const Index = () => {
               <img src={dessertSundae} alt="Cupă specială Grandissimo" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream">
-              <img src={dessertWaffle} alt="Waffle cu fructe, înghețată și ciocolată" loading="lazy" className="h-full w-full object-cover" />
+              <img src={dessertPavlova} alt="Pavlova cu fructe de pădure" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
 
