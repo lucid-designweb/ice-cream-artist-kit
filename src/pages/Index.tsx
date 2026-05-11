@@ -456,14 +456,19 @@ const Index = () => {
           </div>
 
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-rose">06 — Răcoritoare & Fresh-uri</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Fresh-uri</h2>
-            <span className="font-script text-rose text-3xl">stoarse pe loc</span>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-rose">06 — Răcoritoare</p>
+            <h2 className="mt-4 font-display text-5xl md:text-7xl">Răcoritoare</h2>
+            <span className="font-script text-rose text-3xl">& fresh-uri</span>
             <div className="mt-2 h-px w-20 bg-rose" />
             <div className="mt-8">
               {racoritoare.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
             </div>
 
+            <p className="mt-10 font-script text-mint-deep text-3xl">Fresh-uri</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-cocoa/60 mt-1">stoarse pe loc</p>
+            <div className="mt-4">
+              {freshuri.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
+            </div>
           </div>
         </div>
       </section>
