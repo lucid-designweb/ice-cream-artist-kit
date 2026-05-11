@@ -406,22 +406,37 @@ const Index = () => {
           </div>
 
           <div className="rounded-3xl bg-cream p-8 md:p-12">
-            <div className="grid gap-x-12 lg:grid-cols-2">
-              {inghetata.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
+            <div className="grid gap-8 md:grid-cols-3">
+              <div>
+                <p className="font-script text-rose text-3xl">Înghețată</p>
+                <p className="mt-3 text-cocoa/75 leading-relaxed text-sm">
+                  Pentru a alege sortimentele de înghețată pe care doriți să le serviți la cornet
+                  sau la pahar, vă invităm să comandați de la vitrină.
+                </p>
+              </div>
+              <div>
+                <p className="font-script text-mint-deep text-3xl">Torturi de înghețată</p>
+                <p className="mt-3 text-cocoa/75 leading-relaxed text-sm">
+                  Trei gusturi de înghețată în combinații sau delicioase de fructe, ciocolată sau
+                  cremoșit. Tortul este ambalat în cutii izotermice și poate avea greutăți cuprinse
+                  între 0,500 kg și 1,2 kg.
+                </p>
+              </div>
+              <div>
+                <p className="font-script text-cocoa text-3xl">Livrări la domiciliu</p>
+                <p className="mt-3 text-cocoa/75 leading-relaxed text-sm">
+                  Comandați online prin <span className="font-medium">delic.io</span> și
+                  înghețata ajunge la ușa dumneavoastră în jur de 25 de minute.
+                </p>
+              </div>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 pt-8 border-t border-cocoa/10">
-              {[
-                { qty: "1 cupă", price: "8 lei" },
-                { qty: "2 cupe", price: "14 lei" },
-                { qty: "3 cupe", price: "20 lei" },
-                { qty: "Cornet", price: "+ 2 lei" },
-              ].map((q) => (
-                <div key={q.qty} className="flex items-baseline justify-between rounded-2xl bg-paper px-5 py-4">
-                  <span className="text-xs uppercase tracking-widest text-cocoa/70">{q.qty}</span>
-                  <span className="font-display text-2xl">{q.price}</span>
-                </div>
-              ))}
+            <div className="mt-10 pt-8 border-t border-cocoa/10">
+              <p className="font-script text-rose text-3xl">Gelato Bar</p>
+              <p className="mt-3 text-cocoa/75 leading-relaxed text-sm max-w-2xl">
+                Venim cu drag la evenimentul tău, aducând cu noi propria vitrină cu sortimente
+                delicioase de înghețată naturală.
+              </p>
             </div>
           </div>
         </div>
