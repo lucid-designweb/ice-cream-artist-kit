@@ -24,7 +24,7 @@ const cafea = [
   ["Spice Latte", "300 ml", "9 lei"],
   ["Gelato Cafe", "150 ml", "9 lei"],
   ["Café Bombon", "100 ml", "9 lei"],
-  ["Mocca", "300 ml", "11 lei"],
+  ["Mocca", "180 ml", "11 lei"],
   ["Espresso con Panna", "100 ml", "8 lei"],
   ["Caramelo Frappe", "350 ml", "14 lei"],
   ["Ciocolato Frappe", "350 ml", "13 lei"],
