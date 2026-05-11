@@ -24,7 +24,7 @@ const cafea = [
   ["Spice Latte", "300 ml", "9 lei"],
   ["Gelato Cafe", "150 ml", "9 lei"],
   ["Café Bombon", "100 ml", "9 lei"],
-  ["Mocca", "300 ml", "11 lei"],
+  ["Mocca", "180 ml", "11 lei"],
   ["Espresso con Panna", "100 ml", "8 lei"],
   ["Caramelo Frappe", "350 ml", "14 lei"],
   ["Ciocolato Frappe", "350 ml", "13 lei"],
@@ -62,23 +62,11 @@ const racoritoare = [
   ["Apă plată / minerală", "330 ml", "4 lei"],
   ["Gama Coca-Cola", "250 ml", "6 lei"],
   ["Fentimans Botanically Drinks", "275 ml", "12 lei"],
-  ["Fresh Simplu", "250 ml", "10 lei"],
-  ["Fresh Mixt", "250 ml", "12 lei"],
-  ["Limonadă de casă — Clasică", "500 ml", "18 lei"],
-  ["Limonadă de casă — Zmeură & Mentă", "500 ml", "19 lei"],
-  ["Limonadă de casă — Căpșuni & Busuioc", "500 ml", "19 lei"],
-  ["Limonadă de casă — Fructul Pasiunii", "500 ml", "20 lei"],
-  ["Limonadă de casă — Ghimbir & Lime", "500 ml", "19 lei"],
 ];
 
-const inghetata = [
-  ["Grandissimo", "350 g", "23 lei"],
-  ["Banana Split", "400 g", "19 lei"],
-  ["Fruttissima", "280 g", "19 lei"],
-  ["Pinocchio", "130 g", "13 lei"],
-  ["Yogo Macaroons Gelato", "160 g", "17 lei"],
-  ["Choco Goodness", "235 g", "15 lei"],
-  ["Hot Berry Gelato", "230 g", "15,5 lei"],
+const freshuri = [
+  ["Fresh Simplu", "250 ml", "10 lei"],
+  ["Fresh Mixt", "250 ml", "12 lei"],
 ];
 
 const reviews = [
@@ -418,22 +406,37 @@ const Index = () => {
           </div>
 
           <div className="rounded-3xl bg-cream p-8 md:p-12">
-            <div className="grid gap-x-12 lg:grid-cols-2">
-              {inghetata.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
+            <div className="grid gap-8 md:grid-cols-3">
+              <div>
+                <p className="font-script text-rose text-3xl">Înghețată</p>
+                <p className="mt-3 text-cocoa/75 leading-relaxed text-sm">
+                  Pentru a alege sortimentele de înghețată pe care doriți să le serviți la cornet
+                  sau la pahar, vă invităm să comandați de la vitrină.
+                </p>
+              </div>
+              <div>
+                <p className="font-script text-mint-deep text-3xl">Torturi de înghețată</p>
+                <p className="mt-3 text-cocoa/75 leading-relaxed text-sm">
+                  Trei gusturi de înghețată în combinații sau delicioase de fructe, ciocolată sau
+                  cremoșit. Tortul este ambalat în cutii izotermice și poate avea greutăți cuprinse
+                  între 0,500 kg și 1,2 kg.
+                </p>
+              </div>
+              <div>
+                <p className="font-script text-cocoa text-3xl">Livrări la domiciliu</p>
+                <p className="mt-3 text-cocoa/75 leading-relaxed text-sm">
+                  Comandați online prin <span className="font-medium">delic.io</span> și
+                  înghețata ajunge la ușa dumneavoastră în jur de 25 de minute.
+                </p>
+              </div>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 pt-8 border-t border-cocoa/10">
-              {[
-                { qty: "1 cupă", price: "8 lei" },
-                { qty: "2 cupe", price: "14 lei" },
-                { qty: "3 cupe", price: "20 lei" },
-                { qty: "Cornet", price: "+ 2 lei" },
-              ].map((q) => (
-                <div key={q.qty} className="flex items-baseline justify-between rounded-2xl bg-paper px-5 py-4">
-                  <span className="text-xs uppercase tracking-widest text-cocoa/70">{q.qty}</span>
-                  <span className="font-display text-2xl">{q.price}</span>
-                </div>
-              ))}
+            <div className="mt-10 pt-8 border-t border-cocoa/10">
+              <p className="font-script text-rose text-3xl">Gelato Bar</p>
+              <p className="mt-3 text-cocoa/75 leading-relaxed text-sm max-w-2xl">
+                Venim cu drag la evenimentul tău, aducând cu noi propria vitrină cu sortimente
+                delicioase de înghețată naturală.
+              </p>
             </div>
           </div>
         </div>
@@ -453,14 +456,19 @@ const Index = () => {
           </div>
 
           <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-rose">06 — Răcoritoare & Fresh-uri</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Fresh-uri</h2>
-            <span className="font-script text-rose text-3xl">stoarse pe loc</span>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-rose">06 — Răcoritoare</p>
+            <h2 className="mt-4 font-display text-5xl md:text-7xl">Răcoritoare</h2>
+            <span className="font-script text-rose text-3xl">& fresh-uri</span>
             <div className="mt-2 h-px w-20 bg-rose" />
             <div className="mt-8">
               {racoritoare.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
             </div>
 
+            <p className="mt-10 font-script text-mint-deep text-3xl">Fresh-uri</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-cocoa/60 mt-1">stoarse pe loc</p>
+            <div className="mt-4">
+              {freshuri.map(([n, g, p]) => <MenuRow key={n} name={n} qty={g} price={p} />)}
+            </div>
           </div>
         </div>
       </section>
