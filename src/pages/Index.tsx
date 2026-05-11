@@ -8,6 +8,7 @@ import dessertSundae from "@/assets/real-fried-icecream.jpg";
 import dessertPavlova from "@/assets/real-raspberry-cup.jpg";
 import dessertBrownie from "@/assets/real-pavlova.jpg";
 import shopInterior from "@/assets/shop-exterior.jpg";
+import coffeeBean from "@/assets/coffee-bean.png";
 
 /* ───────── Menu data — strictly from the printed booklet ───────── */
 
@@ -307,8 +308,22 @@ const Index = () => {
       </section>
 
       {/* ───── CAFEA ───── */}
-      <section id="cafea" className="py-24 md:py-32 bg-mustard/15 grain">
-        <div className="container grid gap-10 lg:grid-cols-12 lg:gap-12">
+      <section id="cafea" className="relative overflow-hidden py-24 md:py-32 bg-mustard/15 grain">
+        {/* Floating coffee beans */}
+        <img src={coffeeBean} alt="" aria-hidden="true" loading="lazy"
+             className="pointer-events-none select-none absolute top-12 left-[6%] w-16 md:w-20 opacity-80 -rotate-12 animate-float-slow" />
+        <img src={coffeeBean} alt="" aria-hidden="true" loading="lazy"
+             className="pointer-events-none select-none absolute top-1/3 right-[4%] w-20 md:w-28 opacity-70 rotate-[25deg] animate-float-slower" />
+        <img src={coffeeBean} alt="" aria-hidden="true" loading="lazy"
+             className="pointer-events-none select-none absolute bottom-16 left-[10%] w-12 md:w-16 opacity-60 rotate-[40deg] animate-float-slower" />
+        <img src={coffeeBean} alt="" aria-hidden="true" loading="lazy"
+             className="pointer-events-none select-none absolute bottom-24 right-[12%] w-14 md:w-20 opacity-75 -rotate-[20deg] animate-float-slow" />
+        <img src={coffeeBean} alt="" aria-hidden="true" loading="lazy"
+             className="pointer-events-none select-none hidden md:block absolute top-1/2 left-[2%] w-10 opacity-50 rotate-[60deg] animate-float-slow" />
+        <img src={coffeeBean} alt="" aria-hidden="true" loading="lazy"
+             className="pointer-events-none select-none hidden md:block absolute top-8 right-1/3 w-12 opacity-60 -rotate-[35deg] animate-float-slower" />
+
+        <div className="container relative grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4 xl:col-span-5 xl:max-w-[28rem]">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">01 — De băut</p>
             <h2 className="mt-4 font-display leading-[0.95] pb-2" style={{ fontSize: "clamp(2rem, 4.2vw, 3.75rem)", wordBreak: "keep-all", overflowWrap: "normal", hyphens: "none" }}>
