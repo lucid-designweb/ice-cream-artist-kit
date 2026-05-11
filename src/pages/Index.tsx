@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import heroCone from "@/assets/hero-cone.png";
 import logoAniela from "@/assets/logo-gelateria-aniela.png";
 import dessertWaffle from "@/assets/dessert-waffle.jpg";
-import dessertSundae from "@/assets/dessert-sundae.jpg";
-import dessertPavlova from "@/assets/dessert-pavlova.jpg";
-import dessertBrownie from "@/assets/dessert-brownie.jpg";
+import dessertSundae from "@/assets/real-fried-icecream.jpg";
+import dessertPavlova from "@/assets/real-raspberry-cup.jpg";
+import dessertBrownie from "@/assets/real-pavlova.jpg";
 import shopInterior from "@/assets/shop-exterior.jpg";
 
 /* ───────── Menu data — strictly from the printed booklet ───────── */
