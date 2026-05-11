@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import heroCone from "@/assets/hero-cone.png";
 import logoAniela from "@/assets/logo-gelateria-aniela.png";
 import dessertWaffle from "@/assets/dessert-waffle.jpg";
-import dessertSundae from "@/assets/dessert-sundae.jpg";
-import dessertPavlova from "@/assets/dessert-pavlova.jpg";
-import dessertBrownie from "@/assets/dessert-brownie.jpg";
+import dessertSundae from "@/assets/real-fried-icecream.jpg";
+import dessertPavlova from "@/assets/real-raspberry-cup.jpg";
+import dessertBrownie from "@/assets/real-pavlova.jpg";
 import shopInterior from "@/assets/shop-exterior.jpg";
 
 /* ───────── Menu data — strictly from the printed booklet ───────── */
@@ -349,7 +349,7 @@ const Index = () => {
             </div>
 
             <div className="mt-10 relative overflow-hidden rounded-3xl aspect-[5/3] shadow-cream">
-              <img src={dessertBrownie} alt="Brownie cu înghețată și zmeură" loading="lazy"
+              <img src={dessertBrownie} alt="Pavlova cu fructe de pădure și fistic" loading="lazy"
                    className="h-full w-full object-cover" />
             </div>
           </div>
@@ -398,7 +398,7 @@ const Index = () => {
               <img src={dessertSundae} alt="Cupă specială Grandissimo" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="relative overflow-hidden rounded-3xl aspect-[4/5] shadow-cream">
-              <img src={dessertPavlova} alt="Pavlova cu fructe de pădure" loading="lazy" className="h-full w-full object-cover" />
+              <img src={dessertPavlova} alt="Cupă cu înghețată și zmeură proaspătă" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
 
