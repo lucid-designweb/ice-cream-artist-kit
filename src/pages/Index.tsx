@@ -62,23 +62,11 @@ const racoritoare = [
   ["Apă plată / minerală", "330 ml", "4 lei"],
   ["Gama Coca-Cola", "250 ml", "6 lei"],
   ["Fentimans Botanically Drinks", "275 ml", "12 lei"],
-  ["Fresh Simplu", "250 ml", "10 lei"],
-  ["Fresh Mixt", "250 ml", "12 lei"],
-  ["Limonadă de casă — Clasică", "500 ml", "18 lei"],
-  ["Limonadă de casă — Zmeură & Mentă", "500 ml", "19 lei"],
-  ["Limonadă de casă — Căpșuni & Busuioc", "500 ml", "19 lei"],
-  ["Limonadă de casă — Fructul Pasiunii", "500 ml", "20 lei"],
-  ["Limonadă de casă — Ghimbir & Lime", "500 ml", "19 lei"],
 ];
 
-const inghetata = [
-  ["Grandissimo", "350 g", "23 lei"],
-  ["Banana Split", "400 g", "19 lei"],
-  ["Fruttissima", "280 g", "19 lei"],
-  ["Pinocchio", "130 g", "13 lei"],
-  ["Yogo Macaroons Gelato", "160 g", "17 lei"],
-  ["Choco Goodness", "235 g", "15 lei"],
-  ["Hot Berry Gelato", "230 g", "15,5 lei"],
+const freshuri = [
+  ["Fresh Simplu", "250 ml", "10 lei"],
+  ["Fresh Mixt", "250 ml", "12 lei"],
 ];
 
 const reviews = [
