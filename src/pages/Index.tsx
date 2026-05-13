@@ -126,7 +126,7 @@ const Index = () => {
               className="h-16 sm:h-20 md:h-24 w-auto -my-6 transition-transform group-hover:-rotate-3"
             />
           </a>
-          <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm uppercase tracking-[0.18em] lg:tracking-[0.2em] font-medium">
             <a href="#inghetata" className="hover:text-rose transition-colors">Înghețată</a>
             <a href="#cafea" className="hover:text-rose transition-colors">Cafea</a>
             <a href="#patiserie" className="hover:text-rose transition-colors">Patiserie</a>
@@ -138,8 +138,8 @@ const Index = () => {
               <Phone className="h-4 w-4" /> 0744 601 167
             </Button>
           </a>
-          {/* Mobile / tablet: compact phone button */}
-          <a href="tel:+40744601167" className="lg:hidden" aria-label="Sună 0744 601 167">
+          {/* Mobile only: compact phone button */}
+          <a href="tel:+40744601167" className="md:hidden" aria-label="Sună 0744 601 167">
             <Button variant="default" size="icon" className="rounded-full h-10 w-10 bg-cocoa hover:bg-cocoa/90 text-cream">
               <Phone className="h-4 w-4" />
             </Button>
