@@ -268,7 +268,7 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">— Bun venit —</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">
               Trei mese reunite<br/>sub același acoperiș
             </h2>
             <p className="mt-5 text-cocoa/70 leading-relaxed">
@@ -344,7 +344,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">02 — Dulce</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Patiserie</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Patiserie</h2>
             <span className="font-script text-rose text-3xl">de casă</span>
             <div className="mt-2 h-px w-20 bg-rose" />
             <div className="mt-8">
@@ -359,7 +359,7 @@ const Index = () => {
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">03 — # Waffles</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Waffles</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Waffles</h2>
             <span className="font-script text-mint-deep text-3xl">crocante & calde</span>
             <div className="mt-2 h-px w-20 bg-mint-deep" />
             <div className="mt-8">
@@ -447,7 +447,7 @@ const Index = () => {
         <div className="container grid md:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">05 — Ceaiuri</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Ceaiuri</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Ceaiuri</h2>
             <span className="font-script text-mint-deep text-3xl">de la dimineață până seara</span>
             <div className="mt-2 h-px w-20 bg-mint-deep" />
             <div className="mt-8">
@@ -457,7 +457,7 @@ const Index = () => {
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">06 — Răcoritoare</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Răcoritoare</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Răcoritoare</h2>
             <span className="font-script text-rose text-3xl">& fresh-uri</span>
             <div className="mt-2 h-px w-20 bg-rose" />
             <div className="mt-8">
@@ -485,7 +485,7 @@ const Index = () => {
           </div>
           <div className="md:col-span-6 md:pl-8">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">07 — Despre noi</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
               Un colțișor de<br/><span className="font-script text-rose normal-case text-4xl md:text-6xl tracking-normal">Italie</span> în Piața Unirii
             </h2>
             <p className="mt-6 text-cocoa/75 leading-relaxed">
@@ -514,7 +514,7 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">08 — Ce spun clienții</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">
               Dulceață<br/>
               <span className="font-script text-rose normal-case text-4xl md:text-6xl tracking-normal">de cinci stele</span>
             </h2>
@@ -547,7 +547,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-[11px] uppercase tracking-[0.3em] text-coral">09 — Treci pe la noi</p>
-              <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.95]">
+              <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
                 Ne vedem la<br/>
                 <span className="font-script text-coral normal-case text-4xl md:text-6xl tracking-normal">tejghea</span>
               </h2>
