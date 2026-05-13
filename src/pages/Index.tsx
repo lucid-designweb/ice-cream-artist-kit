@@ -286,7 +286,7 @@ const Index = () => {
               <a key={title} href={href}
                  className={`group relative overflow-hidden rounded-3xl ${color} p-6 sm:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-cream`}>
                 <Icon className="h-10 w-10 text-cocoa" strokeWidth={1.5} />
-                <h3 className="mt-6 font-display text-3xl sm:text-4xl break-words hyphens-auto">{title}</h3>
+                <h3 className="mt-6 font-display text-2xl md:text-4xl">{title}</h3>
                 <p className="mt-2 text-cocoa/70">{note}</p>
                 <ArrowRight className="absolute bottom-8 right-8 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
