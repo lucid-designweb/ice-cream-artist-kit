@@ -341,7 +341,7 @@ const Index = () => {
 
       {/* ───── PATISERIE + WAFFLES ───── */}
       <section id="patiserie" className="py-24 md:py-32 bg-paper grain">
-        <div className="container grid md:grid-cols-2 gap-16">
+        <div className="container grid md:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">02 — Dulce</p>
             <h2 className="mt-4 font-display text-5xl md:text-7xl">Patiserie</h2>
@@ -444,7 +444,7 @@ const Index = () => {
 
       {/* ───── BĂUTURI: CEAIURI + RĂCORITOARE ───── */}
       <section id="bauturi" className="py-24 md:py-32 bg-mint/25 grain">
-        <div className="container grid md:grid-cols-2 gap-16">
+        <div className="container grid md:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">05 — Ceaiuri</p>
             <h2 className="mt-4 font-display text-5xl md:text-7xl">Ceaiuri</h2>
