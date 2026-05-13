@@ -281,12 +281,12 @@ const Index = () => {
             {[
               { icon: Coffee, title: "Cafea", note: "100% Arabica, prăjită proaspăt", color: "bg-mustard/30", href: "#cafea" },
               { icon: Cake, title: "Patiserie", note: "Pavlova, Brownie, Profiterol, Tartă", color: "bg-blush", href: "#patiserie" },
-              { icon: IceCream, title: "Înghețată", note: "Sortimente artizanale rotative", color: "bg-mint/40", href: "#inghetata" },
-            ].map(({ icon: Icon, title, note, color, href }) => (
+              { icon: IceCream, title: "Înghețată", note: "Sortimente artizanale rotative", color: "bg-mint/40", href: "#inghetata", titleClassName: "-ml-1 sm:ml-0" },
+            ].map(({ icon: Icon, title, note, color, href, titleClassName }) => (
               <a key={title} href={href}
                  className={`group relative overflow-hidden rounded-3xl ${color} p-6 sm:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-cream`}>
                 <Icon className="h-10 w-10 text-cocoa" strokeWidth={1.5} />
-                <h3 className="mt-6 font-display text-2xl md:text-4xl">{title}</h3>
+                <h3 className={`mt-6 font-display text-2xl md:text-4xl ${titleClassName ?? ""}`}>{title}</h3>
                 <p className="mt-2 text-cocoa/70">{note}</p>
                 <ArrowRight className="absolute bottom-8 right-8 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
