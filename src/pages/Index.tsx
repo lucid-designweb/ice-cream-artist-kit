@@ -332,7 +332,7 @@ const Index = () => {
           </div>
 
           <div className="lg:col-span-8 xl:col-span-7">
-            <div className="grid gap-x-10 xl:grid-cols-2">
+            <div className="grid gap-x-8 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {cafea.map(([n, ml, p]) => <MenuRow key={n} name={n} qty={ml} price={p} />)}
             </div>
           </div>
