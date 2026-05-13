@@ -126,7 +126,7 @@ const Index = () => {
               className="h-16 sm:h-20 md:h-24 w-auto -my-6 transition-transform group-hover:-rotate-3"
             />
           </a>
-          <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.2em] font-medium">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm uppercase tracking-[0.18em] lg:tracking-[0.2em] font-medium">
             <a href="#inghetata" className="hover:text-rose transition-colors">Înghețată</a>
             <a href="#cafea" className="hover:text-rose transition-colors">Cafea</a>
             <a href="#patiserie" className="hover:text-rose transition-colors">Patiserie</a>
@@ -138,8 +138,8 @@ const Index = () => {
               <Phone className="h-4 w-4" /> 0744 601 167
             </Button>
           </a>
-          {/* Mobile / tablet: compact phone button */}
-          <a href="tel:+40744601167" className="lg:hidden" aria-label="Sună 0744 601 167">
+          {/* Mobile only: compact phone button */}
+          <a href="tel:+40744601167" className="md:hidden" aria-label="Sună 0744 601 167">
             <Button variant="default" size="icon" className="rounded-full h-10 w-10 bg-cocoa hover:bg-cocoa/90 text-cream">
               <Phone className="h-4 w-4" />
             </Button>
@@ -268,7 +268,7 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">— Bun venit —</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">
               Trei mese reunite<br/>sub același acoperiș
             </h2>
             <p className="mt-5 text-cocoa/70 leading-relaxed">
@@ -332,7 +332,7 @@ const Index = () => {
           </div>
 
           <div className="lg:col-span-8 xl:col-span-7">
-            <div className="grid gap-x-10 xl:grid-cols-2">
+            <div className="grid gap-x-8 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {cafea.map(([n, ml, p]) => <MenuRow key={n} name={n} qty={ml} price={p} />)}
             </div>
           </div>
@@ -341,10 +341,10 @@ const Index = () => {
 
       {/* ───── PATISERIE + WAFFLES ───── */}
       <section id="patiserie" className="py-24 md:py-32 bg-paper grain">
-        <div className="container grid md:grid-cols-2 gap-16">
+        <div className="container grid md:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">02 — Dulce</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Patiserie</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Patiserie</h2>
             <span className="font-script text-rose text-3xl">de casă</span>
             <div className="mt-2 h-px w-20 bg-rose" />
             <div className="mt-8">
@@ -359,7 +359,7 @@ const Index = () => {
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">03 — # Waffles</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Waffles</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Waffles</h2>
             <span className="font-script text-mint-deep text-3xl">crocante & calde</span>
             <div className="mt-2 h-px w-20 bg-mint-deep" />
             <div className="mt-8">
@@ -444,10 +444,10 @@ const Index = () => {
 
       {/* ───── BĂUTURI: CEAIURI + RĂCORITOARE ───── */}
       <section id="bauturi" className="py-24 md:py-32 bg-mint/25 grain">
-        <div className="container grid md:grid-cols-2 gap-16">
+        <div className="container grid md:grid-cols-2 gap-10 lg:gap-16">
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">05 — Ceaiuri</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Ceaiuri</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Ceaiuri</h2>
             <span className="font-script text-mint-deep text-3xl">de la dimineață până seara</span>
             <div className="mt-2 h-px w-20 bg-mint-deep" />
             <div className="mt-8">
@@ -457,7 +457,7 @@ const Index = () => {
 
           <div>
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">06 — Răcoritoare</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">Răcoritoare</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">Răcoritoare</h2>
             <span className="font-script text-rose text-3xl">& fresh-uri</span>
             <div className="mt-2 h-px w-20 bg-rose" />
             <div className="mt-8">
@@ -485,7 +485,7 @@ const Index = () => {
           </div>
           <div className="md:col-span-6 md:pl-8">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">07 — Despre noi</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
               Un colțișor de<br/><span className="font-script text-rose normal-case text-4xl md:text-6xl tracking-normal">Italie</span> în Piața Unirii
             </h2>
             <p className="mt-6 text-cocoa/75 leading-relaxed">
@@ -514,7 +514,7 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-[11px] uppercase tracking-[0.3em] text-rose">08 — Ce spun clienții</p>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl">
+            <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl">
               Dulceață<br/>
               <span className="font-script text-rose normal-case text-4xl md:text-6xl tracking-normal">de cinci stele</span>
             </h2>
@@ -547,7 +547,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-[11px] uppercase tracking-[0.3em] text-coral">09 — Treci pe la noi</p>
-              <h2 className="mt-4 font-display text-5xl md:text-7xl leading-[0.95]">
+              <h2 className="mt-4 font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95]">
                 Ne vedem la<br/>
                 <span className="font-script text-coral normal-case text-4xl md:text-6xl tracking-normal">tejghea</span>
               </h2>
