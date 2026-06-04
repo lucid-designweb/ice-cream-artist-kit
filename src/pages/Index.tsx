@@ -490,8 +490,7 @@ const Index = () => {
             </h2>
             <p className="mt-6 text-cocoa/75 leading-relaxed">
               Aniela a deschis ușa cu o singură regulă: nimic nu pleacă de la tejghea dacă nu ar
-              servi-o propriei familii. Ingrediente reale, fără scurtături — și un bol cu apă pentru
-              fiecare oaspete cu patru lăbuțe.
+              servi-o propriei familii. Ingrediente reale, fără scurtături.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6">
               {[
