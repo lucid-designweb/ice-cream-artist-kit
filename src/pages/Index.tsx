@@ -72,7 +72,7 @@ const freshuri = [
 const reviews = [
   { name: "Borsi István", time: "acum un an",
     text: "Cupe de înghețată decorative și foarte gustoase. Servesc și cafea, gofre și limonade.", rating: 5 },
-  { name: "Emma Rigo", time: "acum o lună",
+  { name: "Emma Rigo", time: "acum 2 luni",
     text: "Înghețata aici este foarte bună. Și au grijă de animalele tale (ex. îi dau apă).", rating: 5 },
   { name: "Marian Pijen", time: "acum 4 ani",
     text: "Foarte bună înghețata 👌", rating: 5 },
