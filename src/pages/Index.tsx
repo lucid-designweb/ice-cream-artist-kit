@@ -133,6 +133,10 @@ const Index = () => {
             <a href="#bauturi" className="hover:text-rose transition-colors">Băuturi</a>
             <a href="#vizita" className="hover:text-rose transition-colors">Vizită</a>
           </nav>
+          <div className="hidden lg:flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-cocoa/70 mr-3">
+            <Clock className="h-3.5 w-3.5 text-rose" />
+            <span>Zilnic · 9:00 — 18:00</span>
+          </div>
           <a href="tel:+40744601167" className="hidden lg:inline-flex">
             <Button variant="default" className="rounded-full bg-cocoa hover:bg-cocoa/90 text-cream gap-2 text-xs uppercase tracking-widest">
               <Phone className="h-4 w-4" /> 0744 601 167
@@ -551,7 +555,7 @@ const Index = () => {
                 <span className="font-script text-coral normal-case text-4xl md:text-6xl tracking-normal">tejghea</span>
               </h2>
               <p className="mt-6 text-cream/75 max-w-md">
-                Deschis zilnic de la 11:00. Intră, comandă la pachet sau așază-te la una dintre
+                Deschis zilnic de la 9:00 până seara. Intră, comandă la pachet sau așază-te la una dintre
                 măsuțele noastre și privește piața.
               </p>
 
@@ -567,7 +571,7 @@ const Index = () => {
                   <Clock className="h-6 w-6 text-coral shrink-0 mt-1" />
                   <div>
                     <div className="font-medium text-lg">Program</div>
-                    <div className="text-cream/60 text-sm">Zilnic · 11:00 — 22:00</div>
+                    <div className="text-cream/60 text-sm">Zilnic · 9:00 — 18:00</div>
                   </div>
                 </div>
                 <a href="tel:+40744601167" className="flex gap-4 group">
